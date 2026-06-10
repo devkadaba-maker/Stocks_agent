@@ -3,6 +3,7 @@
 import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
+import pandas as pd
 import yfinance as yf
 
 logger = logging.getLogger(__name__)
@@ -10,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 def fetch_bars(
     tickers: list[str], period: str = "3mo", interval: str = "1d"
-) -> dict[str, object]:
+) -> dict[str, pd.DataFrame]:
     """Fetch historical OHLCV bars for a list of tickers in parallel.
 
     Each ticker gets its own yfinance download via a thread pool.
@@ -22,15 +23,21 @@ def fetch_bars(
         Open, High, Low, Close, Volume
     """
     COLUMN_NAMES = ["Open", "High", "Low", "Close", "Volume"]
-    results: dict[str, object] = {}
+    results: dict[str, pd.DataFrame] = {}
 
-    def _fetch_one(ticker: str) -> tuple[str, object] | None:
+    def _fetch_one(ticker: str) -> tuple[str, pd.DataFrame] | None:
         try:
             df = yf.download(ticker, period=period, interval=interval, progress=False)
             if df is not None and not df.empty:
                 # yfinance v1.4+ names columns after the ticker symbol (e.g.
                 # all 5 columns are "AAPL"). Replace by standard position-based names.
                 df.columns = COLUMN_NAMES[: len(df.columns)]
+                # The most recent bar can be a NaN-OHLC placeholder for the
+                # still-in-progress session — drop incomplete trailing rows.
+                df = df.dropna(subset=["Open", "High", "Low", "Close"])
+                if df.empty:
+                    logger.debug("No valid bars for %s after dropna", ticker)
+                    return None
                 return ticker, df
             else:
                 logger.debug("No data for %s (empty DataFrame)", ticker)

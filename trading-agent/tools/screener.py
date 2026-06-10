@@ -14,6 +14,7 @@ import csv
 import io
 import json
 import logging
+from datetime import date, timedelta
 from pathlib import Path
 
 import requests
@@ -22,6 +23,42 @@ from tools.indicators import compute_indicators
 from tools.market_data import fetch_bars
 
 logger = logging.getLogger(__name__)
+
+_SEEN_PATH = settings.DATA_DIR / "screener_seen.json"
+
+
+def _load_seen() -> dict:
+    """Load recently-screened tickers, dropping entries older than 3 days."""
+    try:
+        with open(_SEEN_PATH) as f:
+            seen = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        return {}
+    if not isinstance(seen, dict):
+        return {}
+
+    cutoff = date.today() - timedelta(days=3)
+    cleaned: dict = {}
+    for ticker, seen_date in seen.items():
+        try:
+            if date.fromisoformat(seen_date) >= cutoff:
+                cleaned[ticker] = seen_date
+        except (ValueError, TypeError):
+            continue
+    return cleaned
+
+
+def _save_seen(seen: dict, new_tickers: list[str]) -> None:
+    """Stamp *new_tickers* with today's date and persist the seen map."""
+    today = date.today().isoformat()
+    for ticker in new_tickers:
+        seen[ticker] = today
+    try:
+        _SEEN_PATH.parent.mkdir(parents=True, exist_ok=True)
+        with open(_SEEN_PATH, "w") as f:
+            json.dump(seen, f, indent=2)
+    except OSError:
+        logger.warning("Failed to write %s", _SEEN_PATH, exc_info=True)
 
 _NASDAQ_URL = "https://ftp.nasdaqtrader.com/SymbolDirectory/nasdaqlisted.txt"
 _AMEX_URL = "https://ftp.nasdaqtrader.com/SymbolDirectory/otherlisted.txt"
@@ -283,6 +320,10 @@ def run_morning_screen(exclude: set[str] | None = None) -> list[dict]:
     """
     logger.info("=== Morning screen starting ===")
 
+    seen = _load_seen()
+    exclude = set(exclude) if exclude else set()
+    exclude |= set(seen.keys())
+
     candidates = pass1_metadata_filter()
     if not candidates:
         logger.error("Pass 1 returned 0 candidates -- aborting")
@@ -298,6 +339,8 @@ def run_morning_screen(exclude: set[str] | None = None) -> list[dict]:
     with open(out_path, "w") as f:
         json.dump(shortlist, f, indent=2)
     logger.info("Shortlist written to %s (%d stocks)", out_path, len(shortlist))
+
+    _save_seen(seen, [s["ticker"] for s in shortlist])
 
     # Log with tier labels for visibility (3 tiers: TOP, MID, SMALL)
     sorted_by_dv = sorted(shortlist, key=lambda s: s["dollar_volume"], reverse=True)

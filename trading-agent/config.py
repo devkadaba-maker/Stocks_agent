@@ -25,7 +25,7 @@ class Settings:
     IBKR_BASE_URL: str = os.getenv("IBKR_BASE_URL", "https://localhost:5000/v1/api")
     IBKR_ACCOUNT_ID: str = os.getenv("IBKR_ACCOUNT_ID", "")
     OPENROUTER_API_KEY: str = os.getenv("OPENROUTER_API_KEY", "")
-    LLM_MODEL: str = os.getenv("LLM_MODEL", "deepseek/deepseek-v3-0324")
+    LLM_MODEL: str = os.getenv("LLM_MODEL", "deepseek/deepseek-v4-pro")
 
     # --- Strategy ---
     MAX_POSITIONS: int = int(os.getenv("MAX_POSITIONS", "10"))
@@ -34,6 +34,11 @@ class Settings:
     STOP_LOSS_PCT: float = float(os.getenv("STOP_LOSS_PCT", "7"))
     ATR_MULTIPLIER: float = float(os.getenv("ATR_MULTIPLIER", "2.0"))
     MIN_CONVICTION_SCORE: int = int(os.getenv("MIN_CONVICTION_SCORE", "6"))
+    CLOSE_POSITIONS_EOD: bool = (
+        os.getenv("CLOSE_POSITIONS_EOD", "false").lower() == "true"
+    )
+    CASH_RESERVE_PCT: float = float(os.getenv("CASH_RESERVE_PCT", "15"))
+    DEPLOYMENT_CAUTION_PCT: float = float(os.getenv("DEPLOYMENT_CAUTION_PCT", "70"))
 
     # --- Screener ---
     MIN_PRICE: float = float(os.getenv("MIN_PRICE", "5"))
