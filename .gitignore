@@ -1,0 +1,21 @@
+# Environment
+.env
+venv/
+__pycache__/
+*.pyc
+.python-version
+
+# Data
+trading-agent/data/trades.db
+trading-agent/data/test_output.json
+
+# Logs
+trading-agent/logs/agent.log
+
+# IDE
+.DS_Store
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
