@@ -40,6 +40,10 @@ class Settings:
     )
     CASH_RESERVE_PCT: float = float(os.getenv("CASH_RESERVE_PCT", "15"))
     DEPLOYMENT_CAUTION_PCT: float = float(os.getenv("DEPLOYMENT_CAUTION_PCT", "70"))
+    MAX_CAPITAL: float = float(os.getenv("MAX_CAPITAL", "0"))
+    REQUIRE_CONFIRMATION: bool = (
+        os.getenv("REQUIRE_CONFIRMATION", "true").lower() == "true"
+    )
 
     # --- Screener ---
     MIN_PRICE: float = float(os.getenv("MIN_PRICE", "5"))
