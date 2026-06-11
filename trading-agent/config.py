@@ -26,6 +26,7 @@ class Settings:
     IBKR_ACCOUNT_ID: str = os.getenv("IBKR_ACCOUNT_ID", "")
     OPENROUTER_API_KEY: str = os.getenv("OPENROUTER_API_KEY", "")
     LLM_MODEL: str = os.getenv("LLM_MODEL", "deepseek/deepseek-v4-pro")
+    TAVILY_API_KEY: str = os.getenv("TAVILY_API_KEY", "")
 
     # --- Strategy ---
     MAX_POSITIONS: int = int(os.getenv("MAX_POSITIONS", "10"))

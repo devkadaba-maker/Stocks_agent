@@ -168,6 +168,14 @@ def run_dry_run():
             f"       {p['symbol']:<6s}  {p['qty']:>4d} shares @ ${p['avg_cost']:<8.2f}"
         )
 
+    from tools.portfolio_analysis import analyse_portfolio
+
+    portfolio_intel = analyse_portfolio(portfolio)
+    print(f"\n  Portfolio health score: {portfolio_intel['health_score']}/100")
+    print(f"  Risk tiers represented: {portfolio_intel['tier_count']}")
+    for note in portfolio_intel['health_notes']:
+        print(f"    • {note}")
+
     # ─────────────────────────────────────────────────────────────────
     # STEP 3: Monkey-patch agent module references
     # ─────────────────────────────────────────────────────────────────

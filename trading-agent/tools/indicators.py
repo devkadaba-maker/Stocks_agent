@@ -10,12 +10,14 @@ logger = logging.getLogger(__name__)
 
 def _ema(series: pd.Series, length: int) -> pd.Series:
     """Exponential moving average."""
-    return series.ewm(span=length, adjust=False).mean()
+    result = series.ewm(span=length, adjust=False).mean()
+    return result if isinstance(result, pd.Series) else result.squeeze()  # type: ignore[return-value]
 
 
 def _sma(series: pd.Series, length: int) -> pd.Series:
     """Simple moving average."""
-    return series.rolling(window=length).mean()
+    result = series.rolling(window=length).mean()
+    return result if isinstance(result, pd.Series) else result.squeeze()  # type: ignore[return-value]
 
 
 def _rsi(series: pd.Series, length: int = 14) -> pd.Series:
@@ -26,7 +28,7 @@ def _rsi(series: pd.Series, length: int = 14) -> pd.Series:
     avg_gain = _ema(gain, length)
     avg_loss = _ema(loss, length)
     rs = avg_gain / avg_loss.replace(0, np.nan)
-    rsi = 100 - (100 / (1 + rs))
+    rsi = pd.Series(100 - (100 / (1 + rs)), index=series.index, dtype=float)
     return rsi
 
 
@@ -79,9 +81,11 @@ def _adx(
     tr3 = (low - close.shift(1)).abs()
     tr = pd.concat([tr1, tr2, tr3], axis=1).max(axis=1)
     atr = _ema(tr, length)
-    plus_di = 100 * _ema(plus_dm, length) / atr.replace(0, np.nan)
-    minus_di = 100 * _ema(minus_dm, length) / atr.replace(0, np.nan)
-    dx = 100 * ((plus_di - minus_di).abs() / (plus_di + minus_di).replace(0, np.nan))
+    plus_di: pd.Series = 100 * _ema(plus_dm, length) / atr.replace(0, np.nan)
+    minus_di: pd.Series = 100 * _ema(minus_dm, length) / atr.replace(0, np.nan)
+    dx: pd.Series = 100 * (
+        (plus_di - minus_di).abs() / (plus_di + minus_di).replace(0, np.nan)
+    )
     adx = _ema(dx, length)
     return adx
 
@@ -111,10 +115,10 @@ def compute_indicators(df: pd.DataFrame, live_price: float | None = None) -> dic
 
     Returns a dict with the latest values of each indicator.
     """
-    close = df["Close"].astype(float)
-    high = df["High"].astype(float)
-    low = df["Low"].astype(float)
-    volume = df["Volume"].astype(float)
+    close: pd.Series = df["Close"].astype(float)  # type: ignore[assignment]
+    high: pd.Series = df["High"].astype(float)  # type: ignore[assignment]
+    low: pd.Series = df["Low"].astype(float)  # type: ignore[assignment]
+    volume: pd.Series = df["Volume"].astype(float)  # type: ignore[assignment]
 
     if len(close) < 50:
         logger.warning(
@@ -135,7 +139,7 @@ def compute_indicators(df: pd.DataFrame, live_price: float | None = None) -> dic
 
     # Volume trend: compare recent avg volume to longer-term avg
     vol_sma_20 = _sma(volume, 20)
-    vol_sma_50 = _sma(volume, 50)
+    vol_sma_50 = _sma(volume, 50)  # noqa: F841
 
     latest_idx = -1
 
@@ -198,6 +202,9 @@ def compute_indicators(df: pd.DataFrame, live_price: float | None = None) -> dic
         "volume": int(volume.iloc[latest_idx]),
         "vol_sma_20": int(vol_sma_20.iloc[latest_idx]),
         "vol_ratio": round(
-            float(volume.iloc[latest_idx] / vol_sma_20.iloc[latest_idx]), 2
+            float(
+                volume.iloc[latest_idx] / vol_sma_20.iloc[latest_idx]  # type: ignore[operator]
+            ),
+            2,
         ),
     }

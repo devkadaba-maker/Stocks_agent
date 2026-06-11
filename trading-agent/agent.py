@@ -14,7 +14,9 @@ from tools.execution import get_todays_trades, log_trade, place_order
 from tools.indicators import compute_indicators
 from tools.market_data import fetch_bars
 from tools.portfolio import get_conid, get_portfolio_state, tickle
+from tools.portfolio_analysis import analyse_portfolio, score_candidate_fit
 from tools.risk import calculate_position_size, check_risk, check_stoploss
+from tools.web_search import WEB_SEARCH_TOOL_SCHEMA, web_search
 
 logger = logging.getLogger(__name__)
 
@@ -22,10 +24,13 @@ logger = logging.getLogger(__name__)
 MIN_DEPLOYABLE = 500
 # Shortlist is considered stale once it is older than this many seconds.
 SHORTLIST_MAX_AGE = 24 * 60 * 60
+# Maximum number of web-search tool round trips per LLM call.
+MAX_TOOL_ITERATIONS = 5
 
 
 def _call_llm(system_prompt: str, user_content: str) -> list:
-    """Call the LLM via OpenRouter and parse its JSON-array reply.
+    """Call the LLM via OpenRouter, letting it use web_search, and parse its
+    final JSON-array reply.
 
     Returns the parsed list on success, or [] on any error (the raw text
     is logged so a malformed reply can be debugged).
@@ -36,15 +41,45 @@ def _call_llm(system_prompt: str, user_content: str) -> list:
             base_url="https://openrouter.ai/api/v1",
             api_key=settings.OPENROUTER_API_KEY,
         )
-        response = client.chat.completions.create(
-            model=settings.LLM_MODEL,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_content},
-            ],
-            temperature=0.2,
-        )
-        text = response.choices[0].message.content or ""
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_content},
+        ]
+
+        for _ in range(MAX_TOOL_ITERATIONS):
+            response = client.chat.completions.create(
+                model=settings.LLM_MODEL,
+                messages=messages,
+                tools=[WEB_SEARCH_TOOL_SCHEMA],
+                temperature=0.2,
+            )
+            message = response.choices[0].message
+
+            if message.tool_calls:
+                messages.append(
+                    {
+                        "role": "assistant",
+                        "content": message.content,
+                        "tool_calls": [
+                            tc.model_dump() for tc in message.tool_calls
+                        ],
+                    }
+                )
+                for tool_call in message.tool_calls:
+                    args = json.loads(tool_call.function.arguments or "{}")
+                    query = args.get("query", "")
+                    results = web_search(query)
+                    messages.append(
+                        {
+                            "role": "tool",
+                            "tool_call_id": tool_call.id,
+                            "content": json.dumps(results),
+                        }
+                    )
+                continue
+
+            text = message.content or ""
+            break
 
         # Strip a ```json ... ``` (or plain ``` ... ```) markdown fence if present.
         cleaned = text.strip()
@@ -178,11 +213,22 @@ def run_cycle(cycle_id: str | None = None) -> None:
             enriched_positions.append(enriched)
             pos_lookup[symbol] = {"position": position, "signals": signals}
 
+        # --- PORTFOLIO INTELLIGENCE ---
+        portfolio_intel = analyse_portfolio(portfolio, enriched_positions)
+        logger.info(
+            "Portfolio health: %d/100 | %d risk tier(s) | dominant: %s %.1f%%",
+            portfolio_intel["health_score"],
+            portfolio_intel["tier_count"],
+            portfolio_intel["dominant_tier"],
+            portfolio_intel["dominant_tier_pct"],
+        )
+
         if enriched_positions:
             phase1_context = {
                 "portfolio_value": net_liq,
                 "cash": portfolio["cash"],
                 "deployment_pct": round(deployment_pct, 1),
+                "portfolio_intelligence": portfolio_intel,
                 "positions": enriched_positions,
             }
             phase1_prompt = settings.PHASE1_PROMPT_PATH.read_text()
@@ -277,6 +323,11 @@ def run_cycle(cycle_id: str | None = None) -> None:
                     enriched = dict(candidate)
                     enriched.update(signals)
                     enriched["symbol"] = ticker
+                    fit = score_candidate_fit(ticker, signals, portfolio_intel)
+                    enriched["risk_tier"] = fit["risk_tier"]
+                    enriched["portfolio_fit_score"] = fit["fit_score"]
+                    enriched["portfolio_fit_note"] = fit["fit_note"]
+                    enriched["adds_diversification"] = fit["adds_diversification"]
                     enriched_candidates.append(enriched)
                     cand_lookup[ticker] = signals
 
@@ -285,6 +336,7 @@ def run_cycle(cycle_id: str | None = None) -> None:
                     "portfolio_value": net_liq,
                     "deployment_pct": round(deployment_pct, 1),
                     "cautious_mode": cautious_mode,
+                    "portfolio_intelligence": portfolio_intel,
                     "candidates": enriched_candidates,
                 }
                 phase2_prompt = settings.PHASE2_PROMPT_PATH.read_text()
