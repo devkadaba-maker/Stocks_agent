@@ -5,9 +5,9 @@ Two-pass screener:
         micro-cap/no-volume.  ~8 000 -> ~1 500-2 000 candidates.
   Pass 2 (momentum) -- fetch 60-day bars for survivors, apply volume/
         price/SMA/ATR filters, score by (% above 50-SMA + volume trend).
-  Stratified selection -- survivors are split into dollar-volume quartiles;
-        top picks from each tier ensure a mix of mega-, large-, mid-,
-        and small-cap stocks in the shortlist.
+  Stratified selection -- survivors are split into three volatility tiers
+        by atr_pct; top picks from each tier ensure a mix of compounder,
+        growth, and speculative risk profiles in the shortlist.
 """
 
 import csv
@@ -154,42 +154,40 @@ def pass1_metadata_filter() -> list[str]:
     return unique
 
 
-# -- Dollar-volume tiering -----------------------------------------------------
+# -- Volatility tiering --------------------------------------------------------
 
 
-def _compute_dollar_volume(df) -> float:
-    close = df["Close"].astype(float)
-    volume = df["Volume"].astype(float)
-    recent = min(20, len(close))
-    avg_close = float(close.iloc[-recent:].mean())
-    avg_vol = float(volume.iloc[-recent:].mean())
-    return avg_close * avg_vol
+def _stratified_selection(survivors: list[dict], target: int) -> list[dict]:
+    """Split survivors into three volatility tiers by atr_pct and pick evenly.
 
+    Tiering uses atr_pct (average true range as a % of price) as a direct
+    proxy for the risk/opportunity profile we care about, rather than dollar
+    volume (which is dominated by mega-caps and biases selection toward the
+    largest companies):
+      - Tier 0 (compounders):  atr_pct < 2.0        -- steady, lower-vol movers
+      - Tier 1 (growth):        2.0 <= atr_pct <= 4.0 -- meaningful movers
+      - Tier 2 (speculative):  atr_pct > 4.0        -- high vol, high potential
 
-def _stratified_selection(
-    survivors: list[dict], target: int, n_tiers: int = 4
-) -> list[dict]:
-    """Split survivors into *n_tiers* dollar-volume bins and pick evenly.
-
-    Each bin contributes floor(target / n_tiers) top-scorers.
-    Remaining slots fill from the smallest-cap tier upward
-    to surface rough diamonds.
+    Each tier contributes floor(target / 3) top-scorers; any remaining slots
+    fill from the higher-volatility tiers downward to surface rough diamonds.
     """
     if not survivors:
         return []
     if len(survivors) <= target:
         return survivors
 
-    # Rank by dollar volume descending, then split into quartiles
-    ranked = sorted(survivors, key=lambda s: s["dollar_volume"], reverse=True)
-    n = len(ranked)
+    n_tiers = 3
+    bins: dict[int, list[dict]] = {0: [], 1: [], 2: []}
+    for stock in survivors:
+        atr_pct = stock["atr_pct"]
+        if atr_pct < 2.0:
+            bins[0].append(stock)
+        elif atr_pct <= 4.0:
+            bins[1].append(stock)
+        else:
+            bins[2].append(stock)
 
-    bins: dict[int, list[dict]] = {}
-    for i, stock in enumerate(ranked):
-        quartile = min(n_tiers - 1, int(i / max(1, n // n_tiers)))
-        bins.setdefault(quartile, []).append(stock)
-
-    # Sort each bin internally by score descending
+    # Sort each tier internally by score descending
     for q in bins:
         bins[q].sort(key=lambda s: s["score"], reverse=True)
 
@@ -200,7 +198,7 @@ def _stratified_selection(
     for q in range(n_tiers):
         selected.extend(bins[q][:per_tier])
 
-    # Round 2: fill remainder from smallest-cap tiers first
+    # Round 2: fill remainder from the higher-volatility tiers first
     for q in range(n_tiers - 1, -1, -1):
         if len(selected) >= target:
             break
@@ -228,8 +226,8 @@ def pass2_momentum_screen(
     Scoring:
       score = pct_above_sma_50 + vol_ratio * 10
     Selection:
-      Survivors are split into 4 tiers by dollar volume, best from each tier
-      picked to ensure a diverse mix.
+      Survivors are split into 3 volatility tiers by atr_pct, best from each
+      tier picked to ensure a diverse mix of risk profiles.
 
     Args:
         candidates: ticker symbols from Pass 1.
@@ -273,7 +271,6 @@ def pass2_momentum_screen(
             vol_ratio = signals["vol_ratio"]
             pct_above = signals["pct_above_sma_50"]
             score = pct_above + vol_ratio * 10
-            dollar_volume = _compute_dollar_volume(df)
 
             survivors.append(
                 {
@@ -285,7 +282,6 @@ def pass2_momentum_screen(
                     "rsi": signals["rsi"],
                     "adx": signals["adx"],
                     "score": round(score, 2),
-                    "dollar_volume": round(dollar_volume, 0),
                 }
             )
         except Exception:
@@ -293,11 +289,11 @@ def pass2_momentum_screen(
             continue
 
     target = settings.SHORTLIST_SIZE
-    # 3 tiers: TOP (mega+large merged), MID, SMALL -- tilts toward smaller caps
-    top = _stratified_selection(survivors, target, n_tiers=3)
+    # 3 volatility tiers: COMP (low atr%), GROWTH (mid), SPEC (high atr%)
+    top = _stratified_selection(survivors, target)
 
     logger.info(
-        "Pass 2 complete: %d survived, stratified down to %d (wanted %d, 3 tiers)",
+        "Pass 2 complete: %d survived, stratified down to %d (wanted %d, 3 vol tiers)",
         len(survivors),
         len(top),
         target,
@@ -342,21 +338,23 @@ def run_morning_screen(exclude: set[str] | None = None) -> list[dict]:
 
     _save_seen(seen, [s["ticker"] for s in shortlist])
 
-    # Log with tier labels for visibility (3 tiers: TOP, MID, SMALL)
-    sorted_by_dv = sorted(shortlist, key=lambda s: s["dollar_volume"], reverse=True)
-    n = len(sorted_by_dv)
-    n_tiers = 3
-    per_tier = max(1, n // n_tiers)
-    for i, s in enumerate(sorted_by_dv, 1):
-        tier_idx = min(n_tiers - 1, int((i - 1) / per_tier))
-        label = ["TOP", "MID", "SMALL"][tier_idx]
+    # Log with volatility tier labels for visibility (COMP / GROWTH / SPEC)
+    sorted_by_atr = sorted(shortlist, key=lambda s: s["atr_pct"])
+    for i, s in enumerate(sorted_by_atr, 1):
+        atr_pct = s["atr_pct"]
+        if atr_pct < 2.0:
+            label = "COMP"
+        elif atr_pct <= 4.0:
+            label = "GROWTH"
+        else:
+            label = "SPEC"
         logger.info(
-            "  %2d. [%s] %-6s  $%-8.2f  dv=$%-12s  score=%-6.2f  RSI=%-5.1f",
+            "  %2d. [%-6s] %-6s  $%-8.2f  atr%%=%-5.2f  score=%-6.2f  RSI=%-5.1f",
             i,
             label,
             s["ticker"],
             s["price"],
-            f"{s['dollar_volume']:,.0f}",
+            s["atr_pct"],
             s["score"],
             s["rsi"],
         )

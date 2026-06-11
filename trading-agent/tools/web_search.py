@@ -1,7 +1,8 @@
-"""Web search tool backed by the Tavily API.
+"""Web search backed by the Tavily API.
 
-Gives the LLM a way to look up recent news, earnings, and company context
-for held positions and candidates via OpenAI-style tool/function calling.
+Pre-fetches recent news, earnings, and company context for held positions and
+candidates so the LLM sees research as plain context rather than having to
+call a tool itself.
 """
 
 import logging
@@ -13,33 +14,6 @@ logger = logging.getLogger(__name__)
 
 _TAVILY_URL = "https://api.tavily.com/search"
 _TIMEOUT = 15
-
-# OpenAI-compatible tool schema. Pass this in the `tools` list of a chat
-# completion request to let the model call web_search.
-WEB_SEARCH_TOOL_SCHEMA = {
-    "type": "function",
-    "function": {
-        "name": "web_search",
-        "description": (
-            "Search the web for recent news, earnings, guidance, product "
-            "launches, or other context about a company or stock. Use this "
-            "to research held positions and candidates before deciding."
-        ),
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "query": {
-                    "type": "string",
-                    "description": (
-                        "The search query, e.g. 'AAPL Q3 earnings results' "
-                        "or 'Acme Corp recent news'."
-                    ),
-                },
-            },
-            "required": ["query"],
-        },
-    },
-}
 
 
 def web_search(query: str, max_results: int = 5) -> list[dict]:
@@ -77,3 +51,30 @@ def web_search(query: str, max_results: int = 5) -> list[dict]:
     except Exception:
         logger.exception("Tavily search failed for query: %s", query)
         return []
+
+
+def research_ticker(symbol: str, name_hint: str = "") -> str:
+    """Pre-fetch a plain-text summary of recent news for a ticker.
+
+    Sends a Tavily query asking about recent news, earnings, and business
+    developments, then concatenates the most useful result content into a
+    readable summary. Returns an empty string silently if Tavily is not
+    configured or the search fails.
+    """
+    subject = f"{symbol} ({name_hint})" if name_hint else symbol
+    query = (
+        f"recent news, earnings, and business developments for {subject} stock"
+    )
+    results = web_search(query)
+    if not results:
+        return ""
+
+    parts: list[str] = []
+    for r in results:
+        title = r.get("title", "").strip()
+        content = r.get("content", "").strip()
+        if not content:
+            continue
+        parts.append(f"{title}: {content}" if title else content)
+
+    return "\n\n".join(parts)

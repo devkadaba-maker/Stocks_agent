@@ -16,7 +16,7 @@ from tools.market_data import fetch_bars
 from tools.portfolio import get_conid, get_portfolio_state, tickle
 from tools.portfolio_analysis import analyse_portfolio, score_candidate_fit
 from tools.risk import calculate_position_size, check_risk, check_stoploss
-from tools.web_search import WEB_SEARCH_TOOL_SCHEMA, web_search
+from tools.web_search import research_ticker
 
 logger = logging.getLogger(__name__)
 
@@ -24,13 +24,10 @@ logger = logging.getLogger(__name__)
 MIN_DEPLOYABLE = 500
 # Shortlist is considered stale once it is older than this many seconds.
 SHORTLIST_MAX_AGE = 24 * 60 * 60
-# Maximum number of web-search tool round trips per LLM call.
-MAX_TOOL_ITERATIONS = 5
 
 
 def _call_llm(system_prompt: str, user_content: str) -> list:
-    """Call the LLM via OpenRouter, letting it use web_search, and parse its
-    final JSON-array reply.
+    """Call the LLM via OpenRouter and parse its JSON-array reply.
 
     Returns the parsed list on success, or [] on any error (the raw text
     is logged so a malformed reply can be debugged).
@@ -41,45 +38,15 @@ def _call_llm(system_prompt: str, user_content: str) -> list:
             base_url="https://openrouter.ai/api/v1",
             api_key=settings.OPENROUTER_API_KEY,
         )
-        messages = [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_content},
-        ]
-
-        for _ in range(MAX_TOOL_ITERATIONS):
-            response = client.chat.completions.create(
-                model=settings.LLM_MODEL,
-                messages=messages,
-                tools=[WEB_SEARCH_TOOL_SCHEMA],
-                temperature=0.2,
-            )
-            message = response.choices[0].message
-
-            if message.tool_calls:
-                messages.append(
-                    {
-                        "role": "assistant",
-                        "content": message.content,
-                        "tool_calls": [
-                            tc.model_dump() for tc in message.tool_calls
-                        ],
-                    }
-                )
-                for tool_call in message.tool_calls:
-                    args = json.loads(tool_call.function.arguments or "{}")
-                    query = args.get("query", "")
-                    results = web_search(query)
-                    messages.append(
-                        {
-                            "role": "tool",
-                            "tool_call_id": tool_call.id,
-                            "content": json.dumps(results),
-                        }
-                    )
-                continue
-
-            text = message.content or ""
-            break
+        response = client.chat.completions.create(
+            model=settings.LLM_MODEL,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_content},
+            ],
+            temperature=0.2,
+        )
+        text = response.choices[0].message.content or ""
 
         # Strip a ```json ... ``` (or plain ``` ... ```) markdown fence if present.
         cleaned = text.strip()
@@ -210,6 +177,13 @@ def run_cycle(cycle_id: str | None = None) -> None:
             enriched = dict(position)
             enriched.update(signals)
             enriched["stop_loss_triggered"] = stop_loss_hit
+            recent_news = research_ticker(symbol)
+            enriched["recent_news"] = recent_news
+            logger.info(
+                "[RESEARCH] %s — fetched %d chars of news context",
+                symbol,
+                len(recent_news),
+            )
             enriched_positions.append(enriched)
             pos_lookup[symbol] = {"position": position, "signals": signals}
 
@@ -328,6 +302,13 @@ def run_cycle(cycle_id: str | None = None) -> None:
                     enriched["portfolio_fit_score"] = fit["fit_score"]
                     enriched["portfolio_fit_note"] = fit["fit_note"]
                     enriched["adds_diversification"] = fit["adds_diversification"]
+                    recent_news = research_ticker(ticker)
+                    enriched["recent_news"] = recent_news
+                    logger.info(
+                        "[RESEARCH] %s — fetched %d chars of news context",
+                        ticker,
+                        len(recent_news),
+                    )
                     enriched_candidates.append(enriched)
                     cand_lookup[ticker] = signals
 
