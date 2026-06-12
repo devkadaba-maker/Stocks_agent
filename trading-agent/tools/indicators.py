@@ -114,9 +114,9 @@ def compute_indicators(df: pd.DataFrame, live_price: float | None = None) -> dic
     low: pd.Series = df["Low"].astype(float)  # type: ignore[assignment]
     volume: pd.Series = df["Volume"].astype(float)  # type: ignore[assignment]
 
-    if len(close) < 50:
+    if len(close) < 45:
         logger.warning(
-            "Not enough data for indicators (need >= 50 bars, got %d)", len(close)
+            "Not enough data for indicators (need >= 45 bars, got %d)", len(close)
         )
         return {"error": "insufficient_data", "bars": len(close)}
 
@@ -162,6 +162,16 @@ def compute_indicators(df: pd.DataFrame, live_price: float | None = None) -> dic
     adx_val = float(adx_series.iloc[latest_idx])
     adx_prev_val = float(adx_series.iloc[prev_idx])
     adx_is_turning_up = adx_val > adx_prev_val
+
+    # 6. Volume ratio — guard against a zero/NaN 20-day average (thinly traded
+    #    or freshly listed tickers) to avoid divide-by-zero RuntimeWarnings.
+    latest_volume = float(volume.iloc[latest_idx])
+    vol_sma_20_val = float(vol_sma_20.iloc[latest_idx])
+    if not np.isfinite(vol_sma_20_val) or vol_sma_20_val <= 0:
+        vol_sma_20_val = 0.0
+        vol_ratio = 0.0
+    else:
+        vol_ratio = latest_volume / vol_sma_20_val
 
     # 5. Pre-Boom Setup Logic Flag
     # Must be smaller asset ($1M-$25M daily flow), High capacity (ATR > 4%),
@@ -216,9 +226,7 @@ def compute_indicators(df: pd.DataFrame, live_price: float | None = None) -> dic
         "adx_is_turning_up": adx_is_turning_up,
         "adx_low_trend_consolidation": bool(15.0 <= adx_val <= 23.0),
         # Volume
-        "volume": int(volume.iloc[latest_idx]),
-        "vol_sma_20": int(vol_sma_20.iloc[latest_idx]),
-        "vol_ratio": round(
-            float(volume.iloc[latest_idx] / vol_sma_20.iloc[latest_idx]), 2
-        ),
+        "volume": int(latest_volume),
+        "vol_sma_20": int(vol_sma_20_val),
+        "vol_ratio": round(vol_ratio, 2),
     }

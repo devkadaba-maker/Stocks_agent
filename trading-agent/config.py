@@ -50,7 +50,7 @@ class Settings:
     MAX_PRICE: float = float(os.getenv("MAX_PRICE", "500"))
     MIN_AVG_VOLUME: int = int(os.getenv("MIN_AVG_VOLUME", "200000"))
     SHORTLIST_SIZE: int = int(os.getenv("SHORTLIST_SIZE", "20"))
-    SCREEN_DAYS: int = int(os.getenv("SCREEN_DAYS", "60"))
+    SCREEN_DAYS: int = int(os.getenv("SCREEN_DAYS", "90"))
 
     # --- Schedule (ET) ---
     SCREEN_TIME: str = os.getenv("SCREEN_TIME", "09:30")

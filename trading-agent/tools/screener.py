@@ -265,6 +265,11 @@ def pass2_momentum_screen(
         try:
             signals = compute_indicators(df)
             if "error" in signals:
+                logger.debug(
+                    "%s: skipped — insufficient bars (got %s)",
+                    ticker,
+                    signals.get("bars"),
+                )
                 continue
 
             price = signals["price"]
