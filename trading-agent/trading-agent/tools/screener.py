@@ -3,7 +3,7 @@
 Two-pass screener:
   Pass 1 (metadata only) -- download NASDAQ FTP CSV, filter out OTC/ADRs/
         micro-cap/no-volume.  ~8 000 -> ~1 500-2 000 candidates.
-  Pass 2 (momentum) -- fetch 100-day bars for survivors, apply volume/
+  Pass 2 (momentum) -- fetch 60-day bars for survivors, apply volume/
         price/SMA/ATR filters, score by (% above 50-SMA + volume trend).
   Stratified selection -- survivors are split into three volatility tiers
         by atr_pct; top picks from each tier ensure a mix of compounder,
@@ -60,7 +60,6 @@ def _save_seen(seen: dict, new_tickers: list[str]) -> None:
     except OSError:
         logger.warning("Failed to write %s", _SEEN_PATH, exc_info=True)
 
-
 _NASDAQ_URL = "https://ftp.nasdaqtrader.com/SymbolDirectory/nasdaqlisted.txt"
 _AMEX_URL = "https://ftp.nasdaqtrader.com/SymbolDirectory/otherlisted.txt"
 _NASDAQ_DATAHUB_URL = "https://datahub.io/core/nasdaq-listings/r/nasdaq-listed.csv"
@@ -108,12 +107,8 @@ def _is_valid_common_stock(row: dict) -> bool:
         return False
     if "$" in symbol or "." in symbol:
         return False
-
-    # Different listing sources flag ETFs under different column names.
-    for etf_col in ("ETF", "isETF", "Type"):
-        val = str(row.get(etf_col, "")).strip().upper()
-        if val in ("ETF", "Y", "TRUE"):
-            return False
+    if row.get("ETF", "").strip().upper() == "Y":
+        return False
 
     skip_keywords = (
         "WARRANT",
@@ -127,15 +122,6 @@ def _is_valid_common_stock(row: dict) -> bool:
         "DEPOSITARY",
         "ADR",
         "GDR",
-        "ETF",
-        "FUND",
-        "TRUST",
-        "INCOME",
-        "YIELD",
-        "COVERED CALL",
-        "STRATEGY",
-        "INDEX",
-        "PORTFOLIO",
     )
     for kw in skip_keywords:
         if kw in name:
@@ -260,6 +246,10 @@ def pass2_momentum_screen(
     logger.info("Pass 2: got bars for %d / %d", len(bars), len(candidates))
 
     survivors: list[dict] = []
+    _killed_price = 0
+    _killed_atr = 0
+    _killed_vol = 0
+    _killed_size = 0
 
     for ticker, df in bars.items():
         try:
@@ -270,16 +260,24 @@ def pass2_momentum_screen(
             price = signals["price"]
 
             if price < settings.MIN_PRICE or price > settings.MAX_PRICE:
-                continue
-            if not signals["price_above_sma_50"]:
+                _killed_price += 1
                 continue
 
             atr_pct = signals["atr_pct"]
-            if atr_pct < 1.0 or atr_pct > 5.0:
+            if atr_pct < 0.5 or atr_pct > 8.0:
+                _killed_atr += 1
                 continue
 
             vol_sma_20 = signals["vol_sma_20"]
             if vol_sma_20 < settings.MIN_AVG_VOLUME:
+                _killed_vol += 1
+                continue
+
+            # Size proxy: exclude mega/large caps by dollar volume.
+            # AAPL/NVDA trade billions per day; small/mid caps don't.
+            dollar_volume = vol_sma_20 * price
+            if dollar_volume > settings.MAX_AVG_DOLLAR_VOLUME:
+                _killed_size += 1
                 continue
 
             vol_ratio = signals["vol_ratio"]
@@ -305,6 +303,11 @@ def pass2_momentum_screen(
     target = settings.SHORTLIST_SIZE
     # 3 volatility tiers: COMP (low atr%), GROWTH (mid), SPEC (high atr%)
     top = _stratified_selection(survivors, target)
+
+    logger.info(
+        "Pass 2 filters killed: price=%d  atr=%d  volume=%d  size=%d | survivors=%d",
+        _killed_price, _killed_atr, _killed_vol, _killed_size, len(survivors),
+    )
 
     logger.info(
         "Pass 2 complete: %d survived, stratified down to %d (wanted %d, 3 vol tiers)",

@@ -106,14 +106,8 @@ def _stochastic(
 
 
 def compute_indicators(df: pd.DataFrame, live_price: float | None = None) -> dict:
-    """Compute all technical indicators and return a flat signal dict.
-
-    Expects a DataFrame with columns: Open, High, Low, Close, Volume.
-    The last daily close is used for moving averages / oscillators, but
-    if *live_price* is provided it will appear as ``price`` in the output
-    dict (so decision-making sees the real-time price, not yesterday's).
-
-    Returns a dict with the latest values of each indicator.
+    """Compute technical indicators filtered to find high-volatility companies
+    resting in a low-momentum baseline state before an explosive trend occurs.
     """
     close: pd.Series = df["Close"].astype(float)  # type: ignore[assignment]
     high: pd.Series = df["High"].astype(float)  # type: ignore[assignment]
@@ -137,48 +131,75 @@ def compute_indicators(df: pd.DataFrame, live_price: float | None = None) -> dic
     adx_series = _adx(high, low, close, 14)
     stoch_df = _stochastic(high, low, close)
 
-    # Volume trend: compare recent avg volume to longer-term avg
+    # Volume and Trend metrics
     vol_sma_20 = _sma(volume, 20)
-    vol_sma_50 = _sma(volume, 50)  # noqa: F841
 
     latest_idx = -1
+    prev_idx = (
+        -5
+    )  # Lookback window (approx 1 trading week ago) to calculate trend direction
 
-    # Use live price if provided, otherwise fall back to last daily close
     effective_price = (
         live_price if live_price is not None else float(close.iloc[latest_idx])
     )
 
+    # --- BEHAVIORAL CALCULATIONS FOR SMALL CAP PRE-BOOM DISCOVERY ---
+
+    # 1. Daily Dollar Volume (Filters out mega-cap footprints cleanly)
+    avg_daily_volume = float(vol_sma_20.iloc[latest_idx])
+    daily_dollar_volume = effective_price * avg_daily_volume
+
+    # 2. ATR Percentage (Identifies assets with explosive capacity)
+    atr_val = float(atr_series.iloc[latest_idx])
+    atr_pct = (atr_val / float(close.iloc[latest_idx])) * 100
+
+    # 3. Tethers to core baseline structure
+    sma_50_val = float(sma_50.iloc[latest_idx])
+    pct_above_sma_50 = ((effective_price / sma_50_val) - 1) * 100
+
+    # 4. Momentum tracking parameters
+    rsi_val = float(rsi.iloc[latest_idx])
+    adx_val = float(adx_series.iloc[latest_idx])
+    adx_prev_val = float(adx_series.iloc[prev_idx])
+    adx_is_turning_up = adx_val > adx_prev_val
+
+    # 5. Pre-Boom Setup Logic Flag
+    # Must be smaller asset ($1M-$25M daily flow), High capacity (ATR > 4%),
+    # resting baseline near 50 SMA, completely cooled down neutral momentum.
+    is_pre_boom_setup = bool(
+        (1_000_000 <= daily_dollar_volume <= 25_000_000)
+        and (atr_pct >= 4.0)
+        and (0.0 <= pct_above_sma_50 <= 4.5)
+        and (45.0 <= rsi_val <= 55.0)
+        and (15.0 <= adx_val <= 23.0)
+    )
+
     return {
-        # Price (live if available, daily close fallback)
         "price": round(effective_price, 2),
+        "daily_dollar_volume": round(daily_dollar_volume, 2),
+        "is_pre_boom_setup": is_pre_boom_setup,
+        # Moving averages & baselines
         "price_above_sma_20": bool(effective_price > sma_20.iloc[latest_idx]),
         "price_above_sma_50": bool(effective_price > sma_50.iloc[latest_idx]),
-        "pct_above_sma_50": round(
-            float((effective_price / sma_50.iloc[latest_idx] - 1) * 100), 2
-        ),
-        # Moving averages
+        "pct_above_sma_50": round(float(pct_above_sma_50), 2),
         "sma_20": round(float(sma_20.iloc[latest_idx]), 2),
-        "sma_50": round(float(sma_50.iloc[latest_idx]), 2),
+        "sma_50": round(sma_50_val, 2),
         "ema_9": round(float(ema_9.iloc[latest_idx]), 2),
         "ema_21": round(float(ema_21.iloc[latest_idx]), 2),
-        "ema_9_above_ema_21": bool(ema_9.iloc[latest_idx] > ema_21.iloc[latest_idx]),
-        # Momentum
-        "rsi": round(float(rsi.iloc[latest_idx]), 2),
-        "rsi_overbought": bool(rsi.iloc[latest_idx] > 70),
-        "rsi_oversold": bool(rsi.iloc[latest_idx] < 30),
-        # MACD
+        # Cooled-down Momentum Variables
+        "rsi": round(rsi_val, 2),
+        "rsi_in_launch_pad_zone": bool(45.0 <= rsi_val <= 55.0),
+        # MACD Baseline tracking
         "macd": round(float(macd_df["macd"].iloc[latest_idx]), 4),
         "macd_signal": round(float(macd_df["signal"].iloc[latest_idx]), 4),
         "macd_histogram": round(float(macd_df["histogram"].iloc[latest_idx]), 4),
         "macd_bullish": bool(
             macd_df["macd"].iloc[latest_idx] > macd_df["signal"].iloc[latest_idx]
         ),
-        # Volatility
-        "atr": round(float(atr_series.iloc[latest_idx]), 4),
-        "atr_pct": round(
-            float(atr_series.iloc[latest_idx] / close.iloc[latest_idx] * 100), 2
-        ),
-        # Bollinger
+        # Volatility Capacity
+        "atr": round(atr_val, 4),
+        "atr_pct": round(float(atr_pct), 2),
+        # Bollinger Bands Squeeze
         "bb_upper": round(float(bb["upper"].iloc[latest_idx]), 2),
         "bb_lower": round(float(bb["lower"].iloc[latest_idx]), 2),
         "bb_middle": round(float(bb["middle"].iloc[latest_idx]), 2),
@@ -190,21 +211,14 @@ def compute_indicators(df: pd.DataFrame, live_price: float | None = None) -> dic
             ),
             2,
         ),
-        "bb_above_upper": bool(close.iloc[latest_idx] > bb["upper"].iloc[latest_idx]),
-        "bb_below_lower": bool(close.iloc[latest_idx] < bb["lower"].iloc[latest_idx]),
-        # Trend strength
-        "adx": round(float(adx_series.iloc[latest_idx]), 2),
-        "adx_strong_trend": bool(adx_series.iloc[latest_idx] > 25),
-        # Stochastic
-        "stoch_k": round(float(stoch_df["k"].iloc[latest_idx]), 2),
-        "stoch_d": round(float(stoch_df["d"].iloc[latest_idx]), 2),
+        # Trend Birth Tracking (ADX)
+        "adx": round(adx_val, 2),
+        "adx_is_turning_up": adx_is_turning_up,
+        "adx_low_trend_consolidation": bool(15.0 <= adx_val <= 23.0),
         # Volume
         "volume": int(volume.iloc[latest_idx]),
         "vol_sma_20": int(vol_sma_20.iloc[latest_idx]),
         "vol_ratio": round(
-            float(
-                volume.iloc[latest_idx] / vol_sma_20.iloc[latest_idx]  # type: ignore[operator]
-            ),
-            2,
+            float(volume.iloc[latest_idx] / vol_sma_20.iloc[latest_idx]), 2
         ),
     }

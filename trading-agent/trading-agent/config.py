@@ -49,6 +49,12 @@ class Settings:
     MIN_PRICE: float = float(os.getenv("MIN_PRICE", "5"))
     MAX_PRICE: float = float(os.getenv("MAX_PRICE", "500"))
     MIN_AVG_VOLUME: int = int(os.getenv("MIN_AVG_VOLUME", "200000"))
+    # Size proxy: average daily dollar volume (price x volume) ceiling.
+    # Mega-caps trade $1B-10B+/day; small/mid-caps typically < $200M/day.
+    # This structurally excludes the Apples and Nvidias without market-cap lookups.
+    MAX_AVG_DOLLAR_VOLUME: float = float(
+        os.getenv("MAX_AVG_DOLLAR_VOLUME", "200000000")
+    )
     SHORTLIST_SIZE: int = int(os.getenv("SHORTLIST_SIZE", "20"))
     SCREEN_DAYS: int = int(os.getenv("SCREEN_DAYS", "60"))
 

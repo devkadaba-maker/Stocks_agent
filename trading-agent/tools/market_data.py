@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 
 def fetch_bars(
-    tickers: list[str], period: str = "3mo", interval: str = "1d"
+    tickers: list[str], period: str = "8mo", interval: str = "1d"
 ) -> dict[str, pd.DataFrame]:
     """Fetch historical OHLCV bars for a list of tickers in parallel.
 
