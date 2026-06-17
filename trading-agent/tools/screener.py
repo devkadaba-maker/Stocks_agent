@@ -223,6 +223,64 @@ def _stratified_selection(survivors: list[dict], target: int) -> list[dict]:
     return selected
 
 
+def compute_momentum_score(signals: dict) -> float:
+    """Multi-factor composite score (0-100) from a compute_indicators() result.
+
+    Same formula used to rank Pass 2 survivors, exposed standalone so the
+    MAD MAX extra universe (crypto / leveraged ETFs) can be scored and
+    ranked alongside regular screener candidates.
+    """
+    vol_ratio = signals["vol_ratio"]
+    pct_above = signals["pct_above_sma_50"]
+    rsi_val = signals["rsi"]
+    adx_val = signals["adx"]
+
+    # 1) ADX (trend strength) — 25%  (capped: too high = exhausted)
+    adx_score = min(adx_val * 2, 80)  # optimal 18-40, capped at 40
+
+    # 2) Momentum via % above 50-day SMA — 25%
+    mom_score = min(max(pct_above, 0), 50) / 50 * 100
+
+    # 3) Volume confirmation — 10%
+    vol_score = min(vol_ratio, 3.0) / 3.0 * 100
+
+    # 4) RSI zone score — 20%
+    if 40 <= rsi_val <= 65:
+        rsi_score = 100
+    elif 35 <= rsi_val < 40:
+        rsi_score = 50
+    elif 65 < rsi_val <= 72:
+        rsi_score = 25
+    else:
+        rsi_score = 0
+
+    # 5) Long-term confirmation — 20%
+    # Inverted return_1y: prefer 0-20% (early trend) over 80%+ (late)
+    sma200_above = signals.get("price_above_sma_200")
+    ret_1y = abs(signals.get("return_1y_pct", 0) or 0)
+    if sma200_above is True and 0 < ret_1y <= 30:
+        lt_score = 100  # sweet spot: above 200-SMA, modest 1y gain
+    elif sma200_above is True and 30 < ret_1y <= 50:
+        lt_score = 50  # decent but getting extended
+    elif sma200_above is True and ret_1y > 50:
+        lt_score = 0  # late-cycle / exhausted
+    elif sma200_above is True and ret_1y <= 0:
+        lt_score = 50  # above 200-SMA but flat — could be turning
+    elif sma200_above is False:
+        lt_score = 0  # below 200-SMA — trend broken
+    else:
+        lt_score = 30  # not enough history
+
+    return round(
+        adx_score * 0.25
+        + mom_score * 0.25
+        + vol_score * 0.10
+        + rsi_score * 0.20
+        + lt_score * 0.20,
+        2,
+    )
+
+
 # -- Pass 2 --------------------------------------------------------------------
 
 
@@ -276,20 +334,40 @@ def pass2_momentum_screen(
 
             if price < settings.MIN_PRICE or price > settings.MAX_PRICE:
                 continue
-            if not signals["price_above_sma_50"]:
-                continue
 
             atr_pct = signals["atr_pct"]
-            if atr_pct < 1.0 or atr_pct > 5.0:
-                continue
-
             vol_sma_20 = signals["vol_sma_20"]
-            if vol_sma_20 < settings.MIN_AVG_VOLUME:
-                continue
+
+            if settings.LOOSE_RULES:
+                # Wider net: allow stocks just below their 50-SMA, a broader
+                # volatility band, and lighter volume requirements.
+                if signals["pct_above_sma_50"] < -3.0:
+                    continue
+                if atr_pct < 0.5 or atr_pct > 8.0:
+                    continue
+                if vol_sma_20 < settings.MIN_AVG_VOLUME * 0.5:
+                    continue
+            else:
+                if not signals["price_above_sma_50"]:
+                    continue
+                if atr_pct < 1.0 or atr_pct > 5.0:
+                    continue
+                if vol_sma_20 < settings.MIN_AVG_VOLUME:
+                    continue
 
             vol_ratio = signals["vol_ratio"]
             pct_above = signals["pct_above_sma_50"]
-            score = pct_above + vol_ratio * 10
+            rsi_val = signals["rsi"]
+            adx_val = signals["adx"]
+            daily_dollar_volume = signals.get("daily_dollar_volume", 0)
+
+            # ---- Dollar-volume ceiling (filter out mega-cap liquid stocks) ----
+            # Stocks with >$5B daily dollar volume are mega-caps (AAPL, MSFT
+            # etc.) whose smooth trends are a function of size, not opportunity.
+            if daily_dollar_volume > settings.MAX_DAILY_DOLLAR_VOLUME:
+                continue
+
+            score = compute_momentum_score(signals)
 
             survivors.append(
                 {
@@ -297,17 +375,20 @@ def pass2_momentum_screen(
                     "price": price,
                     "pct_above_sma_50": pct_above,
                     "vol_ratio": vol_ratio,
+                    "daily_dollar_volume": daily_dollar_volume,
                     "atr_pct": atr_pct,
-                    "rsi": signals["rsi"],
-                    "adx": signals["adx"],
-                    "score": round(score, 2),
+                    "rsi": rsi_val,
+                    "adx": adx_val,
+                    "pct_above_sma_200": signals.get("pct_above_sma_200"),
+                    "return_1y_pct": signals.get("return_1y_pct"),
+                    "score": score,
                 }
             )
         except Exception:
             logger.warning("Pass 2 error for %s", ticker, exc_info=True)
             continue
 
-    target = settings.SHORTLIST_SIZE
+    target = settings.SCREEN_SHORTLIST_SIZE
     # 3 volatility tiers: COMP (low atr%), GROWTH (mid), SPEC (high atr%)
     top = _stratified_selection(survivors, target)
 
@@ -327,17 +408,10 @@ def pass2_momentum_screen(
 def run_morning_screen(exclude: set[str] | None = None) -> list[dict]:
     """Run the full screening pipeline and write shortlist.json.
 
-    Args:
-        exclude: tickers to skip in Pass 2 (e.g. already-held stocks).
-
-    Returns:
-        The shortlist (list of dicts), also persisted to disk.
+    Always runs fresh (no seen/cache logic) so that risk level changes
+    produce different candidates each time.
     """
     logger.info("=== Morning screen starting ===")
-
-    seen = _load_seen()
-    exclude = set(exclude) if exclude else set()
-    exclude |= set(seen.keys())
 
     candidates = pass1_metadata_filter()
     if not candidates:
@@ -354,8 +428,6 @@ def run_morning_screen(exclude: set[str] | None = None) -> list[dict]:
     with open(out_path, "w") as f:
         json.dump(shortlist, f, indent=2)
     logger.info("Shortlist written to %s (%d stocks)", out_path, len(shortlist))
-
-    _save_seen(seen, [s["ticker"] for s in shortlist])
 
     # Log with volatility tier labels for visibility (COMP / GROWTH / SPEC)
     sorted_by_atr = sorted(shortlist, key=lambda s: s["atr_pct"])

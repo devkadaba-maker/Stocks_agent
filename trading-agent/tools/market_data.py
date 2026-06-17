@@ -18,12 +18,15 @@ import pandas as pd
 import requests as _requests
 import yfinance as yf
 
+from config import settings
+
 logger = logging.getLogger(__name__)
 
 COLUMN_NAMES = ["Open", "High", "Low", "Close", "Volume"]
-BATCH_SIZE = 100          # tickers per yfinance batch call
-BATCH_PAUSE_SEC = 1.0     # polite pause between batches
-STOOQ_WORKERS = 8         # parallel Stooq fallback fetches
+BATCH_SIZE = 100  # tickers per yfinance batch call
+BATCH_PAUSE_SEC = 0.3  # brief pause between batches
+STOOQ_WORKERS = 8  # parallel Stooq fallback fetches
+CACHE_TTL_SECONDS = 23 * 60 * 60  # 23 hours — daily bars change once per day; safe to reuse all day
 
 # ---------------------------------------------------------------------------
 # Optional curl_cffi session — strongly recommended. Yahoo blocks plain
@@ -145,36 +148,73 @@ def _fetch_one_stooq(ticker: str, days: int) -> tuple[str, pd.DataFrame] | None:
 def fetch_bars(
     tickers: list[str], period: str = "3mo", interval: str = "1d"
 ) -> dict[str, pd.DataFrame]:
-    """Fetch historical OHLCV bars for tickers, with automatic fallback.
+    """Fetch historical OHLCV bars for tickers, with automatic fallback and caching.
 
-    Strategy:
-      1. yfinance in batches of BATCH_SIZE (one HTTP call per batch —
-         drastically fewer requests than per-ticker, which avoids
-         Yahoo rate limiting).
-      2. Any tickers yfinance failed to return are retried via Stooq
-         (daily interval only).
-
-    Returns dict mapping ticker -> DataFrame[Open, High, Low, Close, Volume].
+    Uses a pickle cache keyed on the sorted ticker list + period, so repeated
+    calls (e.g. morning screen then trading cycle) reuse downloaded data.
     """
     tickers = list(dict.fromkeys(tickers))  # dedupe, keep order
+
+    # ---- Check pickle cache ----
+    cache_key = "_".join(sorted(tickers[:5])) + f"_{len(tickers)}tickers_{period}"
+    import hashlib
+
+    cache_path = (
+        settings.DATA_DIR
+        / f"fetch_cache_{hashlib.md5(cache_key.encode()).hexdigest()[:12]}.pkl"
+    )
+    if cache_path.exists():
+        age = time.time() - cache_path.stat().st_mtime
+        if age > CACHE_TTL_SECONDS:
+            logger.info(
+                "Fetch cache expired (%.0f min old, TTL %d min) — refreshing",
+                age / 60,
+                CACHE_TTL_SECONDS / 60,
+            )
+            cache_path.unlink(missing_ok=True)
+        else:
+            try:
+                cached = pd.read_pickle(cache_path)
+                if isinstance(cached, dict):
+                    logger.info(
+                        "Loaded %d tickers from fetch cache (%s, %.0f min old)",
+                        len(cached),
+                        cache_path.name,
+                        age / 60,
+                    )
+                    return cached
+            except Exception:
+                pass
+
     results: dict[str, pd.DataFrame] = {}
 
-    # --- Primary: batched yfinance -------------------------------------
+    # --- Primary: batched yfinance ----
+    total_batches = (len(tickers) + BATCH_SIZE - 1) // BATCH_SIZE
     for i in range(0, len(tickers), BATCH_SIZE):
+        batch_num = i // BATCH_SIZE + 1
         batch = tickers[i : i + BATCH_SIZE]
         results.update(_fetch_batch_yfinance(batch, period, interval))
+        logger.info(
+            "yfinance batch %d/%d done — %d/%d tickers fetched so far",
+            batch_num,
+            total_batches,
+            len(results),
+            len(tickers),
+        )
         if i + BATCH_SIZE < len(tickers):
             time.sleep(BATCH_PAUSE_SEC)
 
     missing = [t for t in tickers if t not in results]
     yf_count = len(results)
 
-    # --- Fallback: Stooq (daily bars only) ------------------------------
+    # --- Fallback: Stooq (daily bars only) ----
     if missing and interval == "1d":
         days = _period_to_days(period)
         logger.info(
             "yfinance returned %d/%d — trying Stooq fallback for %d tickers",
-            yf_count, len(tickers), len(missing),
+            yf_count,
+            len(tickers),
+            len(missing),
         )
         with ThreadPoolExecutor(max_workers=STOOQ_WORKERS) as pool:
             futures = {pool.submit(_fetch_one_stooq, t, days): t for t in missing}
@@ -184,9 +224,20 @@ def fetch_bars(
                     ticker, df = result
                     results[ticker] = df
 
+    # ---- Save cache ----
+    try:
+        settings.DATA_DIR.mkdir(parents=True, exist_ok=True)
+        pd.to_pickle(results, cache_path)
+        logger.info("Saved fetch cache to %s", cache_path.name)
+    except Exception:
+        pass
+
     logger.info(
         "Fetched bars for %d/%d tickers (%d yfinance, %d stooq)",
-        len(results), len(tickers), yf_count, len(results) - yf_count,
+        len(results),
+        len(tickers),
+        yf_count,
+        len(results) - yf_count,
     )
     return results
 

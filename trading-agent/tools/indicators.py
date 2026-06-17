@@ -122,6 +122,7 @@ def compute_indicators(df: pd.DataFrame, live_price: float | None = None) -> dic
 
     sma_20 = _sma(close, 20)
     sma_50 = _sma(close, 50)
+    sma_200 = _sma(close, 200)
     ema_9 = _ema(close, 9)
     ema_21 = _ema(close, 21)
     rsi = _rsi(close, 14)
@@ -156,6 +157,30 @@ def compute_indicators(df: pd.DataFrame, live_price: float | None = None) -> dic
     # 3. Tethers to core baseline structure
     sma_50_val = float(sma_50.iloc[latest_idx])
     pct_above_sma_50 = ((effective_price / sma_50_val) - 1) * 100
+
+    # 3b. Long-term trend (200-day SMA) — only available once 200 bars exist.
+    sma_200_val = float(sma_200.iloc[latest_idx]) if len(close) >= 200 else None
+    price_above_sma_200 = (
+        bool(effective_price > sma_200_val) if sma_200_val is not None else None
+    )
+    pct_above_sma_200 = (
+        round(((effective_price / sma_200_val) - 1) * 100, 2)
+        if sma_200_val is not None
+        else None
+    )
+
+    # 3c. Trailing ~1-year return and distance from the trailing-year high —
+    # gives the LLM a long-horizon read so it doesn't react to short-term
+    # technical noise on a position it only revisits infrequently.
+    lookback = min(252, len(close) - 1)
+    if lookback >= 1:
+        price_1y_ago = float(close.iloc[latest_idx - lookback])
+        return_1y_pct = round(((effective_price / price_1y_ago) - 1) * 100, 2)
+        year_high = float(high.iloc[-(lookback + 1):].max())
+        pct_off_1y_high = round(((effective_price / year_high) - 1) * 100, 2)
+    else:
+        return_1y_pct = 0.0
+        pct_off_1y_high = 0.0
 
     # 4. Momentum tracking parameters
     rsi_val = float(rsi.iloc[latest_idx])
@@ -194,6 +219,12 @@ def compute_indicators(df: pd.DataFrame, live_price: float | None = None) -> dic
         "pct_above_sma_50": round(float(pct_above_sma_50), 2),
         "sma_20": round(float(sma_20.iloc[latest_idx]), 2),
         "sma_50": round(sma_50_val, 2),
+        "sma_200": round(sma_200_val, 2) if sma_200_val is not None else None,
+        "price_above_sma_200": price_above_sma_200,
+        "pct_above_sma_200": pct_above_sma_200,
+        # Long-horizon context for infrequent (e.g. yearly) reviews
+        "return_1y_pct": return_1y_pct,
+        "pct_off_1y_high": pct_off_1y_high,
         "ema_9": round(float(ema_9.iloc[latest_idx]), 2),
         "ema_21": round(float(ema_21.iloc[latest_idx]), 2),
         # Cooled-down Momentum Variables

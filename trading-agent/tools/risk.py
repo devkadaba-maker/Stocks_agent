@@ -2,7 +2,7 @@
 
 import logging
 
-from config import settings
+from config import is_crypto, settings
 
 logger = logging.getLogger(__name__)
 
@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 def check_risk(
     action: str,
     symbol: str,
-    qty: int,
+    qty: float,
     price: float,
     portfolio: dict,
     trades_today: list,
@@ -51,7 +51,10 @@ def check_risk(
             existing_value = existing["qty"] * price
             total_frac = (existing_value + order_value) / portfolio["net_liquidation"]
             if total_frac > max_position_frac:
-                return False, "Would exceed max position size including existing holding"
+                return (
+                    False,
+                    "Would exceed max position size including existing holding",
+                )
 
         return True, "ok"
 
@@ -67,10 +70,13 @@ def check_risk(
 
 
 def calculate_position_size(
-    atr: float, price: float, portfolio_value: float
-) -> int:
+    atr: float, price: float, portfolio_value: float, symbol: str = ""
+) -> float:
     """Size a position so that an ATR-based stop risks ~1% of the portfolio,
-    capped by the max position size."""
+    capped by the max position size.
+
+    Crypto (e.g. BTC-USD) is bought fractionally, so the raw quantity is
+    returned as-is; equities/ETFs are floored to whole shares (minimum 1)."""
     risk_amount = portfolio_value * 0.01
     stop_distance = atr * settings.ATR_MULTIPLIER
 
@@ -79,8 +85,40 @@ def calculate_position_size(
 
     raw_qty = risk_amount / stop_distance
     max_qty = (portfolio_value * settings.MAX_POSITION_PCT / 100) / price
+    qty = min(raw_qty, max_qty)
 
-    return max(1, int(min(raw_qty, max_qty)))
+    if is_crypto(symbol):
+        return qty if qty > 0 else 0.0
+    return max(1, int(qty))
+
+
+def calculate_concentrated_position_size(
+    price: float, portfolio_value: float, symbol: str = ""
+) -> float:
+    """Size a position as an equal slice of deployable capital.
+
+    Deploys ~90% of portfolio_value across SHORTLIST_SIZE positions.
+    The remaining ~10% is kept as cash reserve.
+    """
+    if price <= 0 or settings.SHORTLIST_SIZE <= 0:
+        return 0
+
+    slice_dollars = (portfolio_value * 0.90) / settings.SHORTLIST_SIZE
+    if is_crypto(symbol):
+        return (slice_dollars / price) if slice_dollars >= 1.0 else 0.0
+    return int(slice_dollars / price)
+
+
+def calculate_normal_position_size(
+    price: float, portfolio_value: float, max_positions: int, symbol: str = ""
+) -> float:
+    """Size a position equal-weight across max_positions, deploying ~90%."""
+    if price <= 0 or max_positions <= 0:
+        return 0
+    slice_dollars = (portfolio_value * 0.90) / max_positions
+    if is_crypto(symbol):
+        return (slice_dollars / price) if slice_dollars >= 1.0 else 0.0
+    return int(slice_dollars / price)
 
 
 def check_stoploss(position: dict, current_price: float) -> bool:

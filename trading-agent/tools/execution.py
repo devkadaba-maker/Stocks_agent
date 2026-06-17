@@ -32,13 +32,26 @@ def init_db() -> None:
             )
             """
         )
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS decisions (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                timestamp TEXT NOT NULL,
+                cycle_id TEXT,
+                phase TEXT NOT NULL,
+                symbol TEXT,
+                action TEXT,
+                reasoning TEXT
+            )
+            """
+        )
         conn.commit()
     finally:
         conn.close()
 
 
 def place_order(
-    symbol: str, conid: int, account_id: str, side: str, qty: int
+    symbol: str, conid: int, account_id: str, side: str, qty: float
 ) -> str:
     """Place a market order via IBKR REST. Returns the order id, or "" on failure."""
     url = f"{settings.IBKR_BASE_URL}/iserver/account/{account_id}/orders"
@@ -85,7 +98,7 @@ def log_trade(
     symbol: str,
     conid: int,
     action: str,
-    qty: int,
+    qty: float,
     fill_price: float,
     order_id: str,
     reasoning: str,
@@ -113,6 +126,43 @@ def log_trade(
             ),
         )
         conn.commit()
+    finally:
+        conn.close()
+
+
+def log_decision(
+    cycle_id: str, phase: str, symbol: str, action: str, reasoning: str
+) -> None:
+    """Insert a record of an LLM decision (including HOLD/blocked), for
+    feeding back into future cycles as context."""
+    conn = sqlite3.connect(settings.TRADES_DB_PATH)
+    try:
+        conn.execute(
+            """
+            INSERT INTO decisions (timestamp, cycle_id, phase, symbol, action, reasoning)
+            VALUES (?, ?, ?, ?, ?, ?)
+            """,
+            (datetime.utcnow().isoformat(), cycle_id, phase, symbol, action, reasoning),
+        )
+        conn.commit()
+    finally:
+        conn.close()
+
+
+def get_recent_decisions(days: int = 5) -> list[dict]:
+    """Return LLM decisions from the last *days* days, most recent first."""
+    conn = sqlite3.connect(settings.TRADES_DB_PATH)
+    try:
+        conn.row_factory = sqlite3.Row
+        rows = conn.execute(
+            """
+            SELECT timestamp, phase, symbol, action, reasoning FROM decisions
+            WHERE datetime(timestamp) >= datetime('now', ?)
+            ORDER BY timestamp DESC
+            """,
+            (f"-{days} days",),
+        ).fetchall()
+        return [dict(row) for row in rows]
     finally:
         conn.close()
 
@@ -146,5 +196,5 @@ def close_all_positions(portfolio: dict, account_id: str) -> None:
                 position["conid"],
                 account_id,
                 "SELL",
-                int(qty),
+                qty,  # full size (fractional for crypto)
             )
