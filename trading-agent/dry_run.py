@@ -117,7 +117,9 @@ def _portfolio_path(portfolio_name: str) -> "Path":
     )
 
 
-def _load_virtual_portfolio(default_cash: float, portfolio_name: str) -> tuple[float, dict]:
+def _load_virtual_portfolio(
+    default_cash: float, portfolio_name: str
+) -> tuple[float, dict]:
     """Load the persisted virtual portfolio, or start fresh with default_cash."""
     try:
         data = json.loads(_portfolio_path(portfolio_name).read_text())
@@ -132,7 +134,9 @@ def _save_virtual_portfolio(cash: float, positions: dict, portfolio_name: str) -
     path.write_text(json.dumps({"cash": cash, "positions": positions}, indent=2))
 
 
-def _size_position(signals: dict, net_liq: float, risk_mode: bool, symbol: str, max_positions: int) -> float:
+def _size_position(
+    signals: dict, net_liq: float, risk_mode: bool, symbol: str, max_positions: int
+) -> float:
     """Size a new position. Crypto returns fractional; equities/ETFs return whole shares."""
     if risk_mode:
         slot = (net_liq * 0.90) / max(max_positions, 1)
@@ -216,7 +220,9 @@ def run_dry_run(
     _today = datetime.now(pytz.timezone("America/New_York")).strftime("%Y-%m-%d")
     _schedule = _nyse.schedule(start_date=_today, end_date=_today)
     if _schedule.empty:
-        print(_c(f"\n  ⛔ NYSE closed today ({_today}) — skipping dry run.\n", "yellow"))
+        print(
+            _c(f"\n  ⛔ NYSE closed today ({_today}) — skipping dry run.\n", "yellow")
+        )
         logger.info("NYSE closed today (%s) — dry run skipped.", _today)
         return
 
@@ -256,13 +262,17 @@ def run_dry_run(
     virtual_cash, virtual_positions = _load_virtual_portfolio(capital, portfolio_name)
     held_symbols = set(virtual_positions)
     if virtual_positions:
-        print(f"  ✅ Loaded existing virtual portfolio: {len(virtual_positions)} position(s), ${virtual_cash:,.2f} cash")
+        print(
+            f"  ✅ Loaded existing virtual portfolio: {len(virtual_positions)} position(s), ${virtual_cash:,.2f} cash"
+        )
 
     # ─────────────────────────────────────────────────────────────
     # Step 4: Fetch bars + indicators for candidates + held positions
     # ─────────────────────────────────────────────────────────────
     extra_tickers = extra_universe_tickers(include_crypto, include_etfs)
-    candidate_tickers = [s["ticker"] for s in shortlist if s["ticker"] not in held_symbols]
+    candidate_tickers = [
+        s["ticker"] for s in shortlist if s["ticker"] not in held_symbols
+    ]
     all_tickers = candidate_tickers + extra_tickers + list(held_symbols)
     bars = fetch_bars(all_tickers, period="1y")
 
@@ -329,7 +339,9 @@ def run_dry_run(
         enriched_positions.append(entry)
         pos["price"] = signals["price"]
 
-    net_liq = virtual_cash + sum(p["qty"] * p["price"] for p in virtual_positions.values())
+    net_liq = virtual_cash + sum(
+        p["qty"] * p["price"] for p in virtual_positions.values()
+    )
 
     # ─────────────────────────────────────────────────────────────
     # Step 5: Print candidates summary
@@ -365,7 +377,9 @@ def run_dry_run(
         "open_slots": open_slots,
         "slot_budget": slot_budget,
         "positions": enriched_positions,
-        "candidates": sorted(enriched_candidates, key=lambda c: c.get("score", 0), reverse=True),
+        "candidates": sorted(
+            enriched_candidates, key=lambda c: c.get("score", 0), reverse=True
+        ),
     }
 
     # DEBUG: print first 3 candidates key fields
@@ -414,14 +428,22 @@ def run_dry_run(
                 print(f"  {_c('SKIP', 'yellow')} SELL {sym} — not held")
                 continue
             price = pos["price"]
-            pnl = ((price - pos["avg_cost"]) / pos["avg_cost"] * 100) if pos["avg_cost"] else 0
+            pnl = (
+                ((price - pos["avg_cost"]) / pos["avg_cost"] * 100)
+                if pos["avg_cost"]
+                else 0
+            )
             virtual_cash += pos["qty"] * price
             sells_executed += 1
-            print(f"  {_c('SELL', 'red', 'bold'):>6} {sym:<8} {_rjust(_pct(pnl), 8)}  {reasoning[:55]}")
+            print(
+                f"  {_c('SELL', 'red', 'bold'):>6} {sym:<8} {_rjust(_pct(pnl), 8)}  {reasoning[:55]}"
+            )
 
         elif action == "ADD":
             pos = virtual_positions.get(sym)
-            signal_data = next((e for e in enriched_positions if e["symbol"] == sym), None)
+            signal_data = next(
+                (e for e in enriched_positions if e["symbol"] == sym), None
+            )
             if pos is None or signal_data is None:
                 continue
             qty = _size_position(signal_data, net_liq, risk_mode, sym, max_positions)
@@ -430,7 +452,9 @@ def run_dry_run(
             price = signal_data["price"]
             cost = qty * price
             if cost > virtual_cash:
-                print(f"  {_c('SKIP', 'yellow')} ADD {sym} — ${cost:,.0f} needed, only ${virtual_cash:,.0f} cash")
+                print(
+                    f"  {_c('SKIP', 'yellow')} ADD {sym} — ${cost:,.0f} needed, only ${virtual_cash:,.0f} cash"
+                )
                 continue
             new_qty = pos["qty"] + qty
             pos["avg_cost"] = (pos["avg_cost"] * pos["qty"] + price * qty) / new_qty
@@ -438,7 +462,9 @@ def run_dry_run(
             pos["price"] = price
             virtual_cash -= cost
             adds_executed += 1
-            print(f"  {_c('ADD', 'cyan', 'bold'):>6} {sym:<8} {_fmt_qty(qty):>6} @ ${price:,.2f}  {reasoning[:55]}")
+            print(
+                f"  {_c('ADD', 'cyan', 'bold'):>6} {sym:<8} {_fmt_qty(qty):>6} @ ${price:,.2f}  {reasoning[:55]}"
+            )
 
         elif action == "BUY":
             buys_planned.append(d)
@@ -459,10 +485,17 @@ def run_dry_run(
     for d in buys_planned:
         sym = d["symbol"]
         reasoning = d.get("reasoning", "")
-        remaining_buys -= 1
         cand = next((c for c in enriched_candidates if c["symbol"] == sym), None)
         if cand is None:
             print(f"  {_c('SKIP', 'yellow')} {sym} — no data available")
+            continue
+
+        # Hard RSI gate: never buy a mature, fully-priced-in stock
+        rsi = cand.get("rsi", 0)
+        if rsi >= 71:
+            print(
+                f"  {_c('SKIP', 'yellow')} {sym} — RSI {rsi:.0f} >= 71, all growth already priced in"
+            )
             continue
 
         price = cand["price"]
@@ -515,7 +548,11 @@ def run_dry_run(
     if buys_planned and virtual_positions:
         cash_reserve = net_liq * 0.10
         bought = sorted(
-            (virtual_positions[d["symbol"]] for d in buys_planned if d["symbol"] in virtual_positions),
+            (
+                virtual_positions[d["symbol"]]
+                for d in buys_planned
+                if d["symbol"] in virtual_positions
+            ),
             key=lambda p: p["avg_cost"],
         )
         progress = True
