@@ -42,6 +42,7 @@ def _dry_place_order(symbol, conid, account_id, side, qty):
 exec_mod.place_order = _dry_place_order
 
 # Now safe to import everything
+import pandas_market_calendars as mcal
 import pytz
 from config import extra_universe_tickers, is_crypto, settings
 from tools.execution import init_db, log_decision, log_trade
@@ -210,6 +211,15 @@ def run_dry_run(
     include_etfs: bool = False,
     portfolio_name: str = "default",
 ):
+    # ── NYSE holiday / weekend gate ──────────────────────────────────────────
+    _nyse = mcal.get_calendar("NYSE")
+    _today = datetime.now(pytz.timezone("America/New_York")).strftime("%Y-%m-%d")
+    _schedule = _nyse.schedule(start_date=_today, end_date=_today)
+    if _schedule.empty:
+        print(_c(f"\n  ⛔ NYSE closed today ({_today}) — skipping dry run.\n", "yellow"))
+        logger.info("NYSE closed today (%s) — dry run skipped.", _today)
+        return
+
     max_positions = settings.SHORTLIST_SIZE if risk_mode else settings.MAX_POSITIONS
 
     print()

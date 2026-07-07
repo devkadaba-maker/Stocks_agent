@@ -46,7 +46,8 @@ borderline candidate into a BUY. Empty news? Rely on the technicals.
 Select enough stocks to BUY to bring total holdings to max_positions. Never
 return fewer than max_positions - 2 new buys unless cash is completely exhausted
 or the candidate list is genuinely that short. Spread picks across different
-risk tiers (compounder, growth, speculative) when possible.
+risk tiers (compounder, growth, speculative) when possible. Each candidate
+includes a "sector" field — do not pick more than 2 stocks from the same sector.
 The context includes "slot_budget" — cash available per open slot. Prefer
 candidates priced below slot_budget so each position gets a fair allocation
 without crowding out the others.
