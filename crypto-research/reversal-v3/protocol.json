@@ -1,0 +1,65 @@
+{
+  "registered_before_training_values": true,
+  "strategy": "Simple confirmed EMA or SMA fast/slow direction reversal, one position at a time; opposite direction closes and opens at next execution open; fixed ATR protection, no take-profit",
+  "instrument": "Binance USD-M linear perpetual trade-price candles, historical funding cashflows using nearest observed open as mark-price proxy; funding is not used for signals",
+  "development_assets": [
+    "BCHUSDT",
+    "ETCUSDT",
+    "TRXUSDT",
+    "XLMUSDT"
+  ],
+  "extra_final_assets": [
+    "NEARUSDT",
+    "UNIUSDT",
+    "AAVEUSDT",
+    "FILUSDT"
+  ],
+  "training": "2021 and 2022 annual folds, development assets only; 2020 as available causal warmup; execution 60min; fees primary and doubled",
+  "validation": "2023 on development assets; fixed top12 training shortlist; execution 5,10,60,240 minutes at both costs",
+  "final": "2024-Jan through 2026-Sep on all8 assets; sealed until one global selected.json is frozen; never retune from these results",
+  "BTC": "2022-2023 causal warmup; 2024-2026Sep retrospective, already-tested underlying market period, not clean holdout, no role in selection",
+  "grid": {
+    "families": [
+      "ema",
+      "sma"
+    ],
+    "signal_minutes": [
+      60,
+      240,
+      1440
+    ],
+    "length": [
+      5,
+      10,
+      20,
+      40
+    ],
+    "slow_ratio": [
+      2,
+      5
+    ],
+    "stop_atr": [
+      2,
+      3,
+      4,
+      6
+    ],
+    "cooldown_signal_bars": [
+      0,
+      1,
+      3
+    ]
+  },
+  "grid_size": 576,
+  "risk": "0.5% equity target to stop, capped 95% notional, leverage capped1x, no risk increase for selection; derivative equity accounting, position notional not deducted as spot purchase",
+  "costs": "Primary .10% commission + .05% adverse fill slippage per side; doubled execution-cost stress; realized historical funding with mark proxy; extra adverse funding stress .01% per8h irrespective of direction",
+  "training_score": "median annual-fold daily Sharpe - .5stdSharpe + .2lowerquartileSharpe - 5max(0,worstDD-.20); each primary annual asset panel>=5 trades; top12 by .75own_score+.25median immediate length/stop neighbors",
+  "validation_score": "same score across4execution charts and both costs; require>=5 primary trades each panel; select1highest eligible score, no final-based tuning",
+  "promotion": "median primary final return>0, median doubled-cost final return>0, median adverse-funding-stress final return>0, >=60% primary final panels profitable, worst primary DD<=20%, and median primary Sharpe improves over frozen simple EMA10/50 4h reversal baseline",
+  "baseline": "EMA10/50 4h reversal, fixed4ATR stop, zero cooldown, same risk and costs; also previous long-only EMA10/50 fixed4ATR on same perpetual prices and funding, explicitly not original spot results",
+  "guard": "No training or validation access to any previously-used BTC/ETH/BNB/SOL/XRP/ADA/LTC/LINK/DOGE/AVAX/ATOM/DOT values. BTC files read only after selection freeze. New assets share crypto regimes and current liquid assets imply survivorship bias.",
+  "limits": "Finite576-grid search cannot establish best possible or future profits. Python includes funding; Pine tester excludes exchange funding, exact cashflows and tick/lot/gap handling may differ. No compiler or broker orders. Gaps are retained, next observed open used; complete resampled bars only; lower-frequency charts are not independent samples. Funding data availability must be verified; no missing funding silently replaced with zero.",
+  "funding_timing": "Funding calc timestamps rounded to nearest second; require scheduled hour boundary; funding charged to the position held immediately before that opening boundary, then gap exits and market reversals. Funding mark uses the nearest observed trade open proxy. Boundary settlement/order priority differs across venues.",
+  "liquidation": "Approximate constant .5% maintenance margin liquidation threshold with trade-price proxy, no exchange tier/insurance/ADL model; 95% notional cap at entry, no leverage expansion for optimisation. Actual venue execution can differ.",
+  "warmup": "max(100,2*slow_length) complete signal candles; zero direction before warmup"
+}

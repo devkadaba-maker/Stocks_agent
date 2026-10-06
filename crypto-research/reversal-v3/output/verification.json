@@ -1,0 +1,11 @@
+{
+  "short_profit": true,
+  "long_profit": true,
+  "next_open_reversal": true,
+  "funding_sign_and_priority": true,
+  "short_entry_stop": true,
+  "adverse_gap_stop": true,
+  "ledger_reconciliation": true,
+  "synthetic_future_shock": true,
+  "btc_excluded_from_training": true
+}

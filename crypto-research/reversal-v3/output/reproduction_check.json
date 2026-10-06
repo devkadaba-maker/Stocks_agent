@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "cases": 324,
+  "maximum_numerical_difference": 2.842170943040401e-14,
+  "independent_implementation": false
+}

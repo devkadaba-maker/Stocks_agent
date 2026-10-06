@@ -1,0 +1,22 @@
+[
+  {
+    "file": "output/trades.csv",
+    "sha256": "eadbe5f2efc218398c1c7d51edae47fded4dbe4d0c1ed40f9252e49909a493d1",
+    "bytes": 2015630,
+    "parts": [
+      "packed/trades.000.gz.b64",
+      "packed/trades.001.gz.b64",
+      "packed/trades.002.gz.b64"
+    ]
+  },
+  {
+    "file": "output/training_panels.csv",
+    "sha256": "4dff8b27012e048a1bd59f3b34b2976f7aa453040f4c1bdd72ba651cfe6ce91c",
+    "bytes": 1539778,
+    "parts": [
+      "packed/training_panels.000.gz.b64",
+      "packed/training_panels.001.gz.b64",
+      "packed/training_panels.002.gz.b64"
+    ]
+  }
+]

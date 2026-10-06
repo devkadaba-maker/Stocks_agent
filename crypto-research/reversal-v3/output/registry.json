@@ -1,0 +1,5186 @@
+[
+  {
+    "id": "ema_S60_N5_Q2_R2_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N5_Q2_R2_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N5_Q2_R2_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N5_Q2_R3_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N5_Q2_R3_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N5_Q2_R3_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N5_Q2_R4_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N5_Q2_R4_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N5_Q2_R4_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N5_Q2_R6_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N5_Q2_R6_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N5_Q2_R6_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N5_Q5_R2_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N5_Q5_R2_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N5_Q5_R2_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N5_Q5_R3_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N5_Q5_R3_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N5_Q5_R3_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N5_Q5_R4_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N5_Q5_R4_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N5_Q5_R4_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N5_Q5_R6_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N5_Q5_R6_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N5_Q5_R6_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N10_Q2_R2_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N10_Q2_R2_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N10_Q2_R2_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N10_Q2_R3_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N10_Q2_R3_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N10_Q2_R3_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N10_Q2_R4_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N10_Q2_R4_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N10_Q2_R4_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N10_Q2_R6_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N10_Q2_R6_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N10_Q2_R6_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N10_Q5_R2_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N10_Q5_R2_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N10_Q5_R2_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N10_Q5_R3_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N10_Q5_R3_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N10_Q5_R3_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N10_Q5_R4_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N10_Q5_R4_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N10_Q5_R4_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N10_Q5_R6_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N10_Q5_R6_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N10_Q5_R6_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N20_Q2_R2_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N20_Q2_R2_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N20_Q2_R2_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N20_Q2_R3_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N20_Q2_R3_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N20_Q2_R3_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N20_Q2_R4_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N20_Q2_R4_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N20_Q2_R4_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N20_Q2_R6_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N20_Q2_R6_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N20_Q2_R6_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N20_Q5_R2_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N20_Q5_R2_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N20_Q5_R2_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N20_Q5_R3_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N20_Q5_R3_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N20_Q5_R3_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N20_Q5_R4_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N20_Q5_R4_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N20_Q5_R4_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N20_Q5_R6_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N20_Q5_R6_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N20_Q5_R6_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N40_Q2_R2_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N40_Q2_R2_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N40_Q2_R2_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N40_Q2_R3_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N40_Q2_R3_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N40_Q2_R3_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N40_Q2_R4_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N40_Q2_R4_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N40_Q2_R4_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N40_Q2_R6_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N40_Q2_R6_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N40_Q2_R6_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N40_Q5_R2_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N40_Q5_R2_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N40_Q5_R2_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N40_Q5_R3_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N40_Q5_R3_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N40_Q5_R3_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N40_Q5_R4_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N40_Q5_R4_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N40_Q5_R4_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S60_N40_Q5_R6_C0",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S60_N40_Q5_R6_C1",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S60_N40_Q5_R6_C3",
+    "family": "ema",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N5_Q2_R2_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N5_Q2_R2_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N5_Q2_R2_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N5_Q2_R3_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N5_Q2_R3_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N5_Q2_R3_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N5_Q2_R4_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N5_Q2_R4_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N5_Q2_R4_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N5_Q2_R6_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N5_Q2_R6_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N5_Q2_R6_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N5_Q5_R2_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N5_Q5_R2_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N5_Q5_R2_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N5_Q5_R3_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N5_Q5_R3_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N5_Q5_R3_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N5_Q5_R4_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N5_Q5_R4_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N5_Q5_R4_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N5_Q5_R6_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N5_Q5_R6_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N5_Q5_R6_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N10_Q2_R2_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N10_Q2_R2_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N10_Q2_R2_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N10_Q2_R3_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N10_Q2_R3_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N10_Q2_R3_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N10_Q2_R4_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N10_Q2_R4_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N10_Q2_R4_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N10_Q2_R6_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N10_Q2_R6_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N10_Q2_R6_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N10_Q5_R2_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N10_Q5_R2_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N10_Q5_R2_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N10_Q5_R3_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N10_Q5_R3_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N10_Q5_R3_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N10_Q5_R4_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N10_Q5_R4_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N10_Q5_R4_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N10_Q5_R6_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N10_Q5_R6_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N10_Q5_R6_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N20_Q2_R2_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N20_Q2_R2_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N20_Q2_R2_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N20_Q2_R3_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N20_Q2_R3_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N20_Q2_R3_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N20_Q2_R4_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N20_Q2_R4_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N20_Q2_R4_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N20_Q2_R6_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N20_Q2_R6_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N20_Q2_R6_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N20_Q5_R2_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N20_Q5_R2_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N20_Q5_R2_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N20_Q5_R3_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N20_Q5_R3_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N20_Q5_R3_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N20_Q5_R4_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N20_Q5_R4_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N20_Q5_R4_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N20_Q5_R6_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N20_Q5_R6_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N20_Q5_R6_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N40_Q2_R2_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N40_Q2_R2_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N40_Q2_R2_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N40_Q2_R3_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N40_Q2_R3_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N40_Q2_R3_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N40_Q2_R4_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N40_Q2_R4_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N40_Q2_R4_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N40_Q2_R6_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N40_Q2_R6_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N40_Q2_R6_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N40_Q5_R2_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N40_Q5_R2_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N40_Q5_R2_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N40_Q5_R3_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N40_Q5_R3_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N40_Q5_R3_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N40_Q5_R4_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N40_Q5_R4_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N40_Q5_R4_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S240_N40_Q5_R6_C0",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S240_N40_Q5_R6_C1",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S240_N40_Q5_R6_C3",
+    "family": "ema",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N5_Q2_R2_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N5_Q2_R2_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N5_Q2_R2_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N5_Q2_R3_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N5_Q2_R3_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N5_Q2_R3_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N5_Q2_R4_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N5_Q2_R4_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N5_Q2_R4_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N5_Q2_R6_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N5_Q2_R6_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N5_Q2_R6_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N5_Q5_R2_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N5_Q5_R2_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N5_Q5_R2_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N5_Q5_R3_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N5_Q5_R3_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N5_Q5_R3_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N5_Q5_R4_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N5_Q5_R4_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N5_Q5_R4_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N5_Q5_R6_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N5_Q5_R6_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N5_Q5_R6_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N10_Q2_R2_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N10_Q2_R2_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N10_Q2_R2_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N10_Q2_R3_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N10_Q2_R3_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N10_Q2_R3_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N10_Q2_R4_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N10_Q2_R4_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N10_Q2_R4_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N10_Q2_R6_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N10_Q2_R6_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N10_Q2_R6_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N10_Q5_R2_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N10_Q5_R2_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N10_Q5_R2_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N10_Q5_R3_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N10_Q5_R3_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N10_Q5_R3_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N10_Q5_R4_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N10_Q5_R4_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N10_Q5_R4_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N10_Q5_R6_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N10_Q5_R6_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N10_Q5_R6_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N20_Q2_R2_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N20_Q2_R2_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N20_Q2_R2_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N20_Q2_R3_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N20_Q2_R3_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N20_Q2_R3_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N20_Q2_R4_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N20_Q2_R4_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N20_Q2_R4_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N20_Q2_R6_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N20_Q2_R6_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N20_Q2_R6_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N20_Q5_R2_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N20_Q5_R2_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N20_Q5_R2_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N20_Q5_R3_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N20_Q5_R3_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N20_Q5_R3_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N20_Q5_R4_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N20_Q5_R4_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N20_Q5_R4_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N20_Q5_R6_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N20_Q5_R6_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N20_Q5_R6_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N40_Q2_R2_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N40_Q2_R2_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N40_Q2_R2_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N40_Q2_R3_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N40_Q2_R3_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N40_Q2_R3_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N40_Q2_R4_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N40_Q2_R4_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N40_Q2_R4_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N40_Q2_R6_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N40_Q2_R6_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N40_Q2_R6_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N40_Q5_R2_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N40_Q5_R2_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N40_Q5_R2_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N40_Q5_R3_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N40_Q5_R3_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N40_Q5_R3_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N40_Q5_R4_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N40_Q5_R4_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N40_Q5_R4_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "ema_S1440_N40_Q5_R6_C0",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "ema_S1440_N40_Q5_R6_C1",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "ema_S1440_N40_Q5_R6_C3",
+    "family": "ema",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N5_Q2_R2_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N5_Q2_R2_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N5_Q2_R2_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N5_Q2_R3_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N5_Q2_R3_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N5_Q2_R3_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N5_Q2_R4_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N5_Q2_R4_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N5_Q2_R4_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N5_Q2_R6_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N5_Q2_R6_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N5_Q2_R6_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N5_Q5_R2_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N5_Q5_R2_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N5_Q5_R2_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N5_Q5_R3_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N5_Q5_R3_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N5_Q5_R3_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N5_Q5_R4_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N5_Q5_R4_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N5_Q5_R4_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N5_Q5_R6_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N5_Q5_R6_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N5_Q5_R6_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N10_Q2_R2_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N10_Q2_R2_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N10_Q2_R2_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N10_Q2_R3_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N10_Q2_R3_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N10_Q2_R3_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N10_Q2_R4_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N10_Q2_R4_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N10_Q2_R4_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N10_Q2_R6_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N10_Q2_R6_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N10_Q2_R6_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N10_Q5_R2_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N10_Q5_R2_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N10_Q5_R2_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N10_Q5_R3_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N10_Q5_R3_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N10_Q5_R3_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N10_Q5_R4_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N10_Q5_R4_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N10_Q5_R4_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N10_Q5_R6_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N10_Q5_R6_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N10_Q5_R6_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N20_Q2_R2_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N20_Q2_R2_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N20_Q2_R2_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N20_Q2_R3_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N20_Q2_R3_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N20_Q2_R3_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N20_Q2_R4_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N20_Q2_R4_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N20_Q2_R4_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N20_Q2_R6_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N20_Q2_R6_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N20_Q2_R6_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N20_Q5_R2_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N20_Q5_R2_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N20_Q5_R2_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N20_Q5_R3_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N20_Q5_R3_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N20_Q5_R3_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N20_Q5_R4_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N20_Q5_R4_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N20_Q5_R4_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N20_Q5_R6_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N20_Q5_R6_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N20_Q5_R6_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N40_Q2_R2_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N40_Q2_R2_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N40_Q2_R2_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N40_Q2_R3_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N40_Q2_R3_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N40_Q2_R3_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N40_Q2_R4_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N40_Q2_R4_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N40_Q2_R4_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N40_Q2_R6_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N40_Q2_R6_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N40_Q2_R6_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N40_Q5_R2_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N40_Q5_R2_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N40_Q5_R2_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N40_Q5_R3_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N40_Q5_R3_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N40_Q5_R3_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N40_Q5_R4_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N40_Q5_R4_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N40_Q5_R4_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S60_N40_Q5_R6_C0",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S60_N40_Q5_R6_C1",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S60_N40_Q5_R6_C3",
+    "family": "sma",
+    "signal_minutes": 60,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N5_Q2_R2_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N5_Q2_R2_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N5_Q2_R2_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N5_Q2_R3_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N5_Q2_R3_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N5_Q2_R3_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N5_Q2_R4_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N5_Q2_R4_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N5_Q2_R4_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N5_Q2_R6_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N5_Q2_R6_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N5_Q2_R6_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N5_Q5_R2_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N5_Q5_R2_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N5_Q5_R2_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N5_Q5_R3_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N5_Q5_R3_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N5_Q5_R3_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N5_Q5_R4_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N5_Q5_R4_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N5_Q5_R4_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N5_Q5_R6_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N5_Q5_R6_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N5_Q5_R6_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N10_Q2_R2_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N10_Q2_R2_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N10_Q2_R2_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N10_Q2_R3_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N10_Q2_R3_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N10_Q2_R3_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N10_Q2_R4_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N10_Q2_R4_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N10_Q2_R4_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N10_Q2_R6_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N10_Q2_R6_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N10_Q2_R6_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N10_Q5_R2_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N10_Q5_R2_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N10_Q5_R2_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N10_Q5_R3_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N10_Q5_R3_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N10_Q5_R3_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N10_Q5_R4_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N10_Q5_R4_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N10_Q5_R4_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N10_Q5_R6_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N10_Q5_R6_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N10_Q5_R6_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N20_Q2_R2_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N20_Q2_R2_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N20_Q2_R2_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N20_Q2_R3_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N20_Q2_R3_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N20_Q2_R3_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N20_Q2_R4_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N20_Q2_R4_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N20_Q2_R4_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N20_Q2_R6_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N20_Q2_R6_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N20_Q2_R6_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N20_Q5_R2_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N20_Q5_R2_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N20_Q5_R2_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N20_Q5_R3_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N20_Q5_R3_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N20_Q5_R3_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N20_Q5_R4_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N20_Q5_R4_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N20_Q5_R4_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N20_Q5_R6_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N20_Q5_R6_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N20_Q5_R6_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N40_Q2_R2_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N40_Q2_R2_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N40_Q2_R2_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N40_Q2_R3_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N40_Q2_R3_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N40_Q2_R3_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N40_Q2_R4_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N40_Q2_R4_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N40_Q2_R4_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N40_Q2_R6_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N40_Q2_R6_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N40_Q2_R6_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N40_Q5_R2_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N40_Q5_R2_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N40_Q5_R2_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N40_Q5_R3_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N40_Q5_R3_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N40_Q5_R3_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N40_Q5_R4_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N40_Q5_R4_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N40_Q5_R4_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S240_N40_Q5_R6_C0",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S240_N40_Q5_R6_C1",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S240_N40_Q5_R6_C3",
+    "family": "sma",
+    "signal_minutes": 240,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N5_Q2_R2_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N5_Q2_R2_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N5_Q2_R2_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N5_Q2_R3_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N5_Q2_R3_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N5_Q2_R3_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N5_Q2_R4_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N5_Q2_R4_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N5_Q2_R4_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N5_Q2_R6_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N5_Q2_R6_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N5_Q2_R6_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N5_Q5_R2_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N5_Q5_R2_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N5_Q5_R2_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N5_Q5_R3_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N5_Q5_R3_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N5_Q5_R3_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N5_Q5_R4_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N5_Q5_R4_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N5_Q5_R4_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N5_Q5_R6_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N5_Q5_R6_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N5_Q5_R6_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 5,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N10_Q2_R2_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N10_Q2_R2_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N10_Q2_R2_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N10_Q2_R3_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N10_Q2_R3_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N10_Q2_R3_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N10_Q2_R4_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N10_Q2_R4_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N10_Q2_R4_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N10_Q2_R6_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N10_Q2_R6_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N10_Q2_R6_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N10_Q5_R2_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N10_Q5_R2_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N10_Q5_R2_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N10_Q5_R3_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N10_Q5_R3_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N10_Q5_R3_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N10_Q5_R4_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N10_Q5_R4_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N10_Q5_R4_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N10_Q5_R6_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N10_Q5_R6_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N10_Q5_R6_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 10,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N20_Q2_R2_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N20_Q2_R2_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N20_Q2_R2_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N20_Q2_R3_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N20_Q2_R3_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N20_Q2_R3_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N20_Q2_R4_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N20_Q2_R4_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N20_Q2_R4_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N20_Q2_R6_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N20_Q2_R6_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N20_Q2_R6_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N20_Q5_R2_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N20_Q5_R2_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N20_Q5_R2_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N20_Q5_R3_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N20_Q5_R3_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N20_Q5_R3_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N20_Q5_R4_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N20_Q5_R4_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N20_Q5_R4_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N20_Q5_R6_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N20_Q5_R6_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N20_Q5_R6_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 20,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N40_Q2_R2_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N40_Q2_R2_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N40_Q2_R2_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N40_Q2_R3_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N40_Q2_R3_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N40_Q2_R3_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N40_Q2_R4_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N40_Q2_R4_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N40_Q2_R4_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N40_Q2_R6_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N40_Q2_R6_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N40_Q2_R6_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 2,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N40_Q5_R2_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N40_Q5_R2_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N40_Q5_R2_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 2.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N40_Q5_R3_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N40_Q5_R3_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N40_Q5_R3_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 3.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N40_Q5_R4_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N40_Q5_R4_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N40_Q5_R4_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 4.0,
+    "cooldown": 3
+  },
+  {
+    "id": "sma_S1440_N40_Q5_R6_C0",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 0
+  },
+  {
+    "id": "sma_S1440_N40_Q5_R6_C1",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 1
+  },
+  {
+    "id": "sma_S1440_N40_Q5_R6_C3",
+    "family": "sma",
+    "signal_minutes": 1440,
+    "length": 40,
+    "slow_ratio": 5,
+    "stop_atr": 6.0,
+    "cooldown": 3
+  }
+]

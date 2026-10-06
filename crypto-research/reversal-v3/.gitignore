@@ -1,0 +1,6 @@
+data/development/
+data/final/
+data/btc/
+__pycache__/
+output/trades.csv
+output/training_panels.csv

@@ -1,0 +1,14 @@
+{
+  "selection_sha256": "aec69230dfcda8450a692ac1240efafab7e8e90272de8c099ce3fd38eec442df",
+  "promotion_passed": false,
+  "primary_median_return": -0.00047296141082664445,
+  "double_cost_median_return": -0.014548992498747637,
+  "adverse_funding_median_return": -0.01393457390286329,
+  "profitable_panels": 16,
+  "primary_panels": 32,
+  "worst_primary_drawdown": 0.10803703682027233,
+  "median_sharpe": 0.013929259427676801,
+  "median_paired_sharpe_improvement": 0.23044935895279478,
+  "primary_liquidation_proxy_events": 0,
+  "ledger_rows": 13340
+}

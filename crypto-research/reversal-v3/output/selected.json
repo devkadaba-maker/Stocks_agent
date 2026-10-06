@@ -1,0 +1,28 @@
+{
+  "id": "sma_S1440_N5_Q2_R3_C3",
+  "family": "sma",
+  "signal_minutes": 1440,
+  "length": 5,
+  "slow_ratio": 2,
+  "stop_atr": 3.0,
+  "cooldown": 3,
+  "training": {
+    "id": "sma_S1440_N5_Q2_R3_C3",
+    "score": 0.23677992090879504,
+    "eligible": true,
+    "median_ret": 0.017024222601095484,
+    "median_sharpe": 0.7280393437823285,
+    "worst_dd": 0.04934966727136336,
+    "plateau_score": 0.18865699914865275
+  },
+  "validation": {
+    "id": "sma_S1440_N5_Q2_R3_C3",
+    "score": 0.24833883135939072,
+    "eligible": true,
+    "median_ret": 0.014893136363822501,
+    "median_sharpe": 0.6926777024892783,
+    "worst_dd": 0.03140519842354883
+  },
+  "protocol_sha256": "3c5ab100ab8e24d065fcae74332a948d53d5e58f6540c1765a40318988aaf132",
+  "frozen_at": "2026-10-06T10:59:43.027594+00:00"
+}
