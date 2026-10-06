@@ -1,0 +1,79 @@
+[
+  {
+    "target": "crypto_v2/output/candidate_registry.json",
+    "sha256": "ac18b9728eb2b68edf0ef6606b7173c4caaa66d9ab5557e307cf832432b705d8",
+    "bytes": 417282,
+    "encoding": "base64_parts_gzip",
+    "parts": [
+      "compressed-results/crypto_v2__output__candidate_registry.json.gz.0000.b64"
+    ]
+  },
+  {
+    "target": "crypto_v2/output/daily_equity.csv",
+    "sha256": "c24ac3c533ffb35faad0cc5bebbf2c831f7aad9ca4722f69314a09f5f77b559a",
+    "bytes": 1798584,
+    "encoding": "base64_parts_gzip",
+    "parts": [
+      "compressed-results/crypto_v2__output__daily_equity.csv.gz.0000.b64",
+      "compressed-results/crypto_v2__output__daily_equity.csv.gz.0001.b64"
+    ]
+  },
+  {
+    "target": "crypto_v2/output/trades.csv",
+    "sha256": "61c8133185261ee479e1e91098e35af45e6aea7b15095ee37ed936aae9f13bd8",
+    "bytes": 505594,
+    "encoding": "base64_parts_gzip",
+    "parts": [
+      "compressed-results/crypto_v2__output__trades.csv.gz.0000.b64"
+    ]
+  },
+  {
+    "target": "crypto_v2/output/training_ranking.csv",
+    "sha256": "5e8b42fc0fcdd4632e6481b04ad101fc60b6dfbe0047417d879add220e7e2bee",
+    "bytes": 272213,
+    "encoding": "base64_parts_gzip",
+    "parts": [
+      "compressed-results/crypto_v2__output__training_ranking.csv.gz.0000.b64"
+    ]
+  },
+  {
+    "target": "crypto_v2/proof/reproduced_trade_ledger.csv",
+    "sha256": "ba8ad00488eb7289c88bc08c10689ef597067d826b795e6a14c61f0eb8e7110b",
+    "bytes": 1168450,
+    "encoding": "base64_parts_gzip",
+    "parts": [
+      "compressed-results/crypto_v2__proof__reproduced_trade_ledger.csv.gz.0000.b64"
+    ]
+  },
+  {
+    "target": "crypto_v2/output/training_panels.csv",
+    "sha256": "f1b526512e9590ca053e59d99e517ac391275196db5d6ff157837c0bf88a09f7",
+    "bytes": 24328212,
+    "encoding": "base64_parts_gzip",
+    "parts": [
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0000.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0001.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0002.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0003.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0004.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0005.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0006.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0007.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0008.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0009.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0010.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0011.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0012.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0013.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0014.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0015.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0016.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0017.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0018.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0019.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0020.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0021.b64",
+      "compressed-results/crypto_v2__output__training_panels.csv.gz.0022.b64"
+    ]
+  }
+]

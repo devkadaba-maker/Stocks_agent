@@ -1,0 +1,10 @@
+{
+  "selected_sha256": "bf0a37af5d94078094315608f2d4aae85e03808a6f1d9f0990da98c637cbd13e",
+  "parameters": "EMA10/50 on confirmed 4h; fixed 4xATR14; risk .5%;95%spot cap; no trailing,ADX or cooldown; long only",
+  "costs": "0.10% commission plus .05% adverse fill-price slippage per side; cost_multiplier2 doubles both",
+  "warmup": "2022-2023 BTC, used only for causal indicator history",
+  "periods": "2024-Sep2026 overlaps original study: retrospective frozen-parameter asset transfer; Oct1-5 unused short period: too short to validate edge",
+  "no_optimisation": true,
+  "cash_start": "Each evaluation period starts flat at $10000",
+  "liquidation": "Any remaining position liquidated at final observed close with costs"
+}

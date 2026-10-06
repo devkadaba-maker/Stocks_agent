@@ -1,0 +1,12 @@
+crypto_v2/data/development/
+crypto_v2/data/sealed/
+**/__pycache__/
+*.pyc
+.venv/
+btc-check/data/
+crypto_v2/output/training_panels.csv
+crypto_v2/output/candidate_registry.json
+crypto_v2/output/daily_equity.csv
+crypto_v2/output/trades.csv
+crypto_v2/output/training_ranking.csv
+crypto_v2/proof/reproduced_trade_ledger.csv

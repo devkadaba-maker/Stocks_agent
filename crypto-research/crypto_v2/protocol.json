@@ -1,0 +1,23 @@
+{
+  "registered_before_new_market_values": true,
+  "old_candle_exclusion": "Never request BTCUSDT, ETHUSDT, BNBUSDT or SOLUSDT candles dated 2020-01-01 through 2026-09-30. Prior metrics and rules may be read, but cannot count as fresh evidence.",
+  "development_symbols": ["XRPUSDT", "ADAUSDT", "LTCUSDT", "LINKUSDT"],
+  "development_history": "2018-2023, when listed; 2018-2019 used only for causal indicator warmup; training evaluation on independent calendar folds 2020, 2021, 2022",
+  "validation": "2023, development symbols only; shortlist fixed from training before validation access",
+  "final_test": "2024-01-01 through 2026-09-30 on development symbols plus DOGEUSDT, AVAXUSDT, ATOMUSDT and DOTUSDT; never open until final selected.json hash is written",
+  "historical_transfer": "BTCUSDT and ETHUSDT 2017-09 through 2019-12; evaluate 2018-2019 after causal warmup. Not a contemporary BTC test and not a chronological forecast experiment because development uses later dates on other assets.",
+  "candidate_budget": 2048,
+  "grid": {"families": ["ema", "donchian", "momentum", "keltner", "macd", "rsi_pullback", "bollinger", "supertrend"], "signal_minutes": [240, 1440], "length": [10, 20, 40, 80], "adx_min": [0, 20], "stop_atr": [2, 3, 4, 6], "trailing": [false, true], "cooldown_decisions": [0, 3]},
+  "training_execution": [60, 240],
+  "validation_and_test_execution": [5, 10, 60, 240, 1440],
+  "timeframe_limit": "For a 4h signal clock on a daily execution chart, aggregate the complete day's signals, use the last confirmed 4h indicator state, and execute at the next daily open. Different execution granularities remain different systems and are reported separately.",
+  "risk": "Fixed 0.5% equity risk target per initial stop and 95% spot cap, no leverage, one long position; cannot improve results merely by increasing risk.",
+  "costs": "0.10% commission plus 0.05% adverse execution-price slippage per side; also doubled fees and slippage in every training, validation and final panel.",
+  "training_score": "Across assets, years, execution charts and two costs: median daily Sharpe minus half its standard deviation, plus 0.2 times lower-quartile Sharpe, minus excess worst drawdown over 15%. Require at least 2 trades in every asset-year at the 1h execution chart under primary costs and at least 12 total trades per asset there.",
+  "plateau_score": "0.75*training score + 0.25*median immediate length/stop neighbors sharing every other parameter; top 12 distinct configurations become fixed validation shortlist.",
+  "validation_score": "Same risk-adjusted cross-panel score over all five execution charts and both costs; require 5 trades in each primary-cost panel. Select one global rule set; final test cannot trigger another tuning run.",
+  "baseline": "Previous daily EMA40/EMA200, daily ATR14*3 trailing, 400 daily bars warmup, 0.5% target risk, 95% cap, no cooldown. Evaluate it on exactly the same new candles as the winner; never reuse earlier returns.",
+  "promotion_rule": "Only describe improvement as final-test-supported if paired median annual return and paired median Sharpe exceed baseline, at least 60% of primary-cost asset/chart pairs have higher Sharpe, median doubled-cost return is positive, and no primary panel exceeds 15% drawdown. Otherwise deliver optimized research candidate with failed improvement claim.",
+  "data_audit": "Publisher SHA256 checksums; reject malformed/duplicate OHLCV; normalize ms/us timestamps; no price interpolation; complete resampled bars only; next observed open across gaps; event time for confirmed indicator availability must be <= decision candle close.",
+  "limits": ["Distinct coins share market regimes and are correlated", "Current liquid coins create survivorship bias", "Training candles are intentionally reused for fair candidate comparison; no prior-task candles or recycled final-test values", "No truly independent contemporary BTC/ETH multi-year sample remains", "The final test may fail; no promise of better returns or future profitability"]
+}

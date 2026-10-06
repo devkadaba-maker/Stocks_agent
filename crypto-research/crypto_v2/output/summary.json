@@ -1,0 +1,16 @@
+{
+  "selection_sha256": "bf0a37af5d94078094315608f2d4aae85e03808a6f1d9f0990da98c637cbd13e",
+  "improvement_supported": false,
+  "median_paired_cagr_gain": 0.005788179425284756,
+  "median_paired_sharpe_gain": 0.41598403869317413,
+  "share_better_sharpe": 0.9,
+  "median_new_sharpe": -0.002884851335144073,
+  "median_old_sharpe": -0.31603615742057084,
+  "median_new_return": -0.0014014378818696382,
+  "median_old_return": -0.01214828200168322,
+  "profitable_primary": 20,
+  "profitable_stress": 20,
+  "panels": 40,
+  "worst_new_drawdown": 0.12443213016588694,
+  "median_stress_return": -0.014624927253060083
+}

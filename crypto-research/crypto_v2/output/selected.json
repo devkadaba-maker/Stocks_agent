@@ -1,0 +1,28 @@
+{
+  "family": "ema",
+  "signal_minutes": 240,
+  "length": 10,
+  "adx_min": 0,
+  "stop_atr": 4.0,
+  "trailing": false,
+  "cooldown": 0,
+  "id": "ema_S240_N10_A0_R4_T0_C0",
+  "training": {
+    "id": "ema_S240_N10_A0_R4_T0_C0",
+    "score": 0.5172859800523542,
+    "eligible": true,
+    "median_sharpe": 1.0625191550656345,
+    "median_cagr": 0.05130557505186473,
+    "worst_drawdown": 0.06967228589173036,
+    "plateau_score": 0.48244943205484275
+  },
+  "validation": {
+    "id": "ema_S240_N10_A0_R4_T0_C0",
+    "score": 0.23880228637891593,
+    "eligible": true,
+    "median_cagr": 0.04067631549703621,
+    "median_sharpe": 0.7376466006933091,
+    "worst_drawdown": 0.06423180583350652
+  },
+  "protocol_sha256": "6b61a6201cac133254d5c1344f0507d1f215d567001ffa2b4a7f85d91dae8842"
+}
